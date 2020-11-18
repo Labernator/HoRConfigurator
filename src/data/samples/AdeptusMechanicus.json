@@ -1,0 +1,41 @@
+{
+    "Title": "Skynet",
+    "Faction": "Adeptus Mechanicus",
+    "ArmyRules": [
+        "Agripinaa – Staunch Defenders",
+        "Soldiers of the Machine God"
+    ],
+    "Philosophy": "A More Subtle Touch",
+    "ScenariosPlayed": 0,
+    "Roster": [
+        {
+            "name": "Tech Priest Procurator",
+            "equipment": {
+                "weapons": [
+                    "Volkite Blaster",
+                    {
+                        "name": "Combi-Plasma",
+                        "amount": 2
+                    }
+                ],
+                "otherEquipment": [
+                    "Medicae Mechadendrite",
+                    "Heavy Armature Legs"
+                ]
+            },
+            "keywords": [
+                "Magos Retiarus"
+            ],
+            "rules": [
+                "Campus Retiarius"
+            ]
+        },
+        {
+            "name": "Kataphron Battle Servitor",
+            "amount": 2
+        },
+        {
+            "name": "Tech Priest Auctoris"
+        }
+    ]
+}

@@ -1,0 +1,176 @@
+{
+    "rules": [
+        {
+            "name": "Fire Storm",
+            "effect": "This Model can fire twice if it remained stationary during its turn (including Overwatch)."
+        },
+        {
+            "name": "Relentless Advance",
+            "effect": "This Model does not suffer any penalty to its hit rolls for Advancing and firing Assault weapons."
+        },
+        {
+            "name": "Rites of War",
+            "effect": "Friendly modells within 6” may re-roll hit rolls of 1.",
+            "price": 12
+        },
+        {
+            "name": "Jink",
+            "effect": "Gain a 4+ invulnerable save against shooting attacks if you advanced (lasts until the next movement phase)"
+        },
+        {
+            "name": "Turbo-boost",
+            "effect": "When this model Advances, add 6” to its Move instead of rolling a dice."
+        },
+        {
+            "name": "Helix Adept Amendment",
+            "effect": "At the end of any of your Movement phases, select a friendly INFANTRY or BIKER model within 3” that died the previous turn. On a 5+ this model is returned with 1 wound remaining. Otherwise the Adept can do nothing else for the remainder of the turn. You can instead choose a wounded model: it immediately regains 1 lost wounds."
+        },
+        {
+            "name": "Smoke Grenade",
+            "effect": "One use only - Instead of Shooting choose a point within 8”. Until the start of your next turn, enemy models subtract 1 from their shooting hit rolls when targeting friendly units within 3” of this point. Models can draw line of sight into and out of the affected area, but not through it."
+        },
+        {
+            "name": "Bonding Knife Ritual",
+            "effect": "If you roll a 6 when taking a Morale test, the test is automatically passed."
+        },
+        {
+            "name": "Damaged Jetpack",
+            "effect": "When this model has 1 or 2 wounds remaining, it loses the Fly and Jet Pack Keywords."
+        },
+        {
+            "name": "Field Amplifier Relay",
+            "effect": "Replace STRIKE TEAM with BREACHER TEAM keyword"
+        },
+        {
+            "name": "Damaged Generator",
+            "effect": "When this model has 1 or 2 wounds remaining, all natural 1’s to hit made with a ranged weapon by this model result in a single automatic AP -2 with a damage of 1."
+        },
+        {
+            "name": "Saviour Protocols",
+            "effect": "If an INFANTRY or BATTLESUIT model within 3” of this model is wounded roll a D6. On a 2+ you can allocate that wound to this model instead. If you do, this model suffers a mortal wound instead of the normal damage."
+        },
+        {
+            "name": "Threat Identification Protocols",
+            "effect": "In the Shooting phase, this model can only target the nearest visible enemy model (choose which one if two or more models are equally close)."
+        },
+        {
+            "name": "Shield Generator",
+            "effect": "Gains a 4+ invulnerable save. Roll a D6 each time this model loses a wound; on a 5+ ignore that wound."
+        },
+        {
+            "name": "Advanced Bionics",
+            "effect": "Gains a 5+ invulnerable save."
+        },
+        {
+            "name": "Bionics",
+            "effect": "Gains a 6+ invulnerable save."
+        },
+        {
+            "name": "Master of Machines",
+            "effect": "At the end of your Movement you may repair another single friendly <FORGE WORLD> model within 3”. It regains D3 lost wounds. A model my only be target once per turn."
+        },
+        {
+            "name": "Noospheric Fulcrum",
+            "effect": "Friendly <FORGE WORLD> Units within 6” may re-roll hit rolls of 1 in the Shooting phase."
+        },
+        {
+            "name": "Campus Retiarius",
+            "effect": "Gain +1 BS. This model gains Two Ballistic mechadendrites which ignore their -1 to BS rule. In addition, this model may take a Volkite blaster or an eradication ray."
+        },
+        {
+            "name": "Canticles of the Omnissiah",
+            "effect": "See the codex for this rule."
+        },
+        {
+            "name": "Heavy Battle Servitor",
+            "effect": "This model may move and fire heavy weapons without penalty. If it advances it must always advance by D3”."
+        },
+        {
+            "name": "Thermal Shed",
+            "effect": "Subtract 1 from your Armour save if equipped with a Plasma Culverin or a Heavy Grav-Cannon."
+        },
+        {
+            "name": "Heavy Tracks",
+            "effect": "Ignore distance terrain penalties when moving, charging, or advancing. This model cannot be moved by an enemy model."
+        },
+        {
+            "name": "Magos Biologis",
+            "effect": "Friendly <FORGE WORLD> models within 6” re-roll 1’s to wound."
+        },
+        {
+            "name": "Guide the Faithful",
+            "effect": "All friendly '<ORDER>' models within 3” of this model may re-roll to hit rolls of 1.",
+            "alignmentParameter": true
+        },
+        {
+            "name": "Bodyguard",
+            "effect": "When an '<ORDER>' CHARACTER model within 3” would lose any wounds from an attack, this model may roll a D6; on a 2+ this model suffers 1 mortal wound for each of those wounds instead. Only one attempt can be made to intercept each attack.",
+            "alignmentParameter": true
+        },
+        {
+            "name": "Sworn Protectors",
+            "effect": "Re-roll hit rolls whilst within 6” of any friendly '<ORDER>' CANONESSES.",
+            "alignmentParameter": true
+        },
+        {
+            "name": "Camo Cloak",
+            "effect": "Gain +2 armour save instead of +1 against ranged attacks for being in cover.",
+            "price": 3
+        },
+        {
+            "name": "Concealed Position",
+            "effect": "During deployment, you can set up this model anywhere that is more than 9” away from any enemy models and the enemy deployment zone."
+        },
+        {
+            "name": "Sky Strike",
+            "effect": "During deployment, you can hold this model back. At the end of one of your Movement phases you can set up this unit anywhere that is more than 9” away from any enemy models."
+        },
+        {
+            "name": "Manta Strike",
+            "effect": "During deployment, you can hold this model back. At the end of one of your Movement phases you can set up this unit anywhere that is more than 9” away from any enemy models."
+        },
+        {
+            "name": "Angelic Visage",
+            "effect": "The invulnerable save received from the Shield of Faith is improved by 1 (max 4+)."
+        },
+        {
+            "name": "Acts of Faith",
+            "effect": "See the codex for this rule."
+        },
+        {
+            "name": "Sacred Rites",
+            "effect": "See the codex for this rule."
+        },
+        {
+            "name": "Litany of Deeds",
+            "effect": "See the codex for this rule."
+        },
+        {
+            "name": "Shield of Faith",
+            "effect": "Gains a 6+ invulnerable save."
+        },
+        {
+            "name": "Rosarius",
+            "effect": "Gains a 4+ invulnerable save."
+        },
+        {
+            "name": "Zealot",
+            "effect": "Re-roll the hit roll of any melee attack if you made a charge move, were charged or performed a Heroic Intervention this turn."
+        },
+        {
+            "name": "Spiritual Fortitude",
+            "effect": "When this model would lose a wound as a result of a mortal wound in the Psychic phase, roll a D6; on a 5+ that wound is not lost."
+        },
+        {
+            "name": "Jump Pack Assault",
+            "effect": "During deployment, you can hold this model back. At the end of one of your Movement phases you can set up this unit anywhere that is more than 9” away from any enemy models."
+        }
+    ],
+    "Philosophies": [
+        {
+            "name": "One Track Mind",
+            "tp": 1,
+            "text": "Before the game, you choose a single Tactical Action available to you. You may only use that Tactical Action in the game. You may choose different Tactical Actions for each game"
+        }
+    ]
+}

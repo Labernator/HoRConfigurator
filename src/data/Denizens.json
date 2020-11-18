@@ -1,0 +1,485 @@
+{
+    "NightMarket": [
+        {
+            "name": "Fra’al Invader",
+            "type": "Shooting",
+            "stats": {
+                "Movement": 5,
+                "WeaponSkill": "5+",
+                "BallisticSkill": "4+",
+                "Strength": 2,
+                "Toughness": 2,
+                "Wounds": 2,
+                "Attacks": 1,
+                "Leadership": 7,
+                "Save": "7+",
+                "InvulnerableSave": "3+"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Death Ray Gun",
+                        "type": "Pistol 2",
+                        "strength": 5,
+                        "damage": "D3",
+                        "ap": 2,
+                        "range": 18
+                    },
+                    {
+                        "name": "Grox Mutilator",
+                        "type": "Melee",
+                        "strength": 5,
+                        "damage": "1",
+                        "ap": 1,
+                        "rule": "A model that suffers at least one unsaved wound from this weapon must fall back in its subsequent Movement phase."
+                    }
+                ]
+            },
+            "keywords": [
+                "Infantry",
+                "Fra’al Invader",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Freeboota",
+            "type": "Shooting",
+            "stats": {
+                "Movement": 5,
+                "WeaponSkill": "3+",
+                "BallisticSkill": "5+",
+                "Strength": 5,
+                "Toughness": 4,
+                "Wounds": 3,
+                "Attacks": 3,
+                "Leadership": 7,
+                "Save": "4+",
+                "InvulnerableSave": "5+"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Supa Shoota",
+                        "type": "Assault 3",
+                        "strength": 6,
+                        "damage": "1",
+                        "ap": 1,
+                        "range": 18
+                    },
+                    {
+                        "name": "Kustom Slasha",
+                        "type": "Melee",
+                        "strength": 6,
+                        "damage": "2",
+                        "ap": 2
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Advanced Cybork Body",
+                    "effect": "Invulnerable save is also used against mortal wounds."
+                },
+                {
+                    "name": "Masters of Dakka",
+                    "effect": "If within 6” of a spawn point or an objective, shoot twice with its Supa Shoota."
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Ork,",
+                "Freebootaz",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Viskeon 'Tourist'",
+            "type": "Assault",
+            "stats": {
+                "Movement": 8,
+                "WeaponSkill": "3+",
+                "BallisticSkill": "6+",
+                "Strength": 5,
+                "Toughness": 8,
+                "Wounds": 8,
+                "Attacks": 3,
+                "Leadership": 7,
+                "Save": "3+",
+                "InvulnerableSave": "-"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Slasher Tendril",
+                        "type": "Pistol 1",
+                        "strength": 5,
+                        "damage": "1",
+                        "ap": 0,
+                        "range": 12
+                    },
+                    {
+                        "name": "Bony Fist",
+                        "type": "Melee",
+                        "strength": "User",
+                        "damage": "D3",
+                        "ap": 1
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Weaponized Metabolism",
+                    "effect": "Attacks and Strength are increased for every wound this model currently has remaining less than its maximum."
+                },
+                {
+                    "name": "Cancerous Regeneration",
+                    "effect": "At the beginning of each Movement phase (enemy and player), this model heals all lost wounds"
+                }
+            ],
+            "keywords": [
+                "Monster",
+                "Viskeon 'Tourist'",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Hrud Warden",
+            "type": "Shooting",
+            "stats": {
+                "Movement": 6,
+                "WeaponSkill": "4+",
+                "BallisticSkill": "3+",
+                "Strength": 3,
+                "Toughness": 4,
+                "Wounds": 3,
+                "Attacks": 2,
+                "Leadership": 6,
+                "Save": "5+",
+                "InvulnerableSave": "-"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Hrud Fusil",
+                        "type": "Heavy 1",
+                        "strength": 57,
+                        "damage": "D3",
+                        "ap": 2,
+                        "range": 36
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Blessing of Qah",
+                    "effect": "When targeted with ranged weapons, the attacker suffers a -2 penalty to hit rolls (max. 6+)"
+                },
+                {
+                    "name": "Entropic Aura",
+                    "effect": "When this model loses its final wound, roll a die for every player-controlled model within 3” of it. On a 5+, that model takes a mortal wound"
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Hrud Warden",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Rak'Gol Envoy",
+            "type": "Assault",
+            "stats": {
+                "Movement": 8,
+                "WeaponSkill": "3+",
+                "BallisticSkill": "4+",
+                "Strength": 4,
+                "Toughness": 5,
+                "Wounds": 4,
+                "Attacks": 3,
+                "Leadership": 8,
+                "Save": "4+",
+                "InvulnerableSave": "-"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Stub Rippers",
+                        "type": "Pistol 4",
+                        "strength": 3,
+                        "damage": "1",
+                        "ap": 0,
+                        "range": 12
+                    },
+                    {
+                        "name": "Chainclaws",
+                        "type": "Melee",
+                        "strength": 5,
+                        "damage": "1",
+                        "ap": 1
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Murder Frenzy",
+                    "effect": "If at least one 6 is rolled for charge distance, move this model 6” towards nearest playercontrolled model at the end of the Fight phase, and make its shooting and melee attacks again."
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Rak’Gol Envoy",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Renegade Space Marine",
+            "type": "Shooting",
+            "stats": {
+                "Movement": 6,
+                "WeaponSkill": "3+",
+                "BallisticSkill": "3+",
+                "Strength": 4,
+                "Toughness": 4,
+                "Wounds": 2,
+                "Attacks": 2,
+                "Leadership": 8,
+                "Save": "3+",
+                "InvulnerableSave": "5+"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Ancient Bolter",
+                        "type": "Assault 3",
+                        "strength": 4,
+                        "damage": "1",
+                        "ap": 0,
+                        "range": 24
+                    },
+                    {
+                        "name": "Legion Gladius",
+                        "type": "Melee",
+                        "strength": 4,
+                        "damage": 1,
+                        "ap": 2
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Defiler of the Corpse God",
+                    "effect": "Add +1 to wound rolls against models with the Imperium keyword."
+                },
+                {
+                    "name": "Infernal Fury",
+                    "effect": "Treat the Ancient Bolter as Assault 5 as long as within 6” of a spawn point or an objective."
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Renegade Space Marine",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Loxatl Mercenary",
+            "type": "Assault",
+            "stats": {
+                "Movement": 9,
+                "WeaponSkill": "3+",
+                "BallisticSkill": "3+",
+                "Strength": 4,
+                "Toughness": 5,
+                "Wounds": 3,
+                "Attacks": 3,
+                "Leadership": 5,
+                "Save": "5+",
+                "InvulnerableSave": "-"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Flechette Blaster",
+                        "type": "Pistol 4",
+                        "strength": 2,
+                        "damage": 1,
+                        "ap": 1,
+                        "range": 12,
+                        "rule": "Re-roll failed wound rolls."
+                    },
+                    {
+                        "name": "Dewclaw",
+                        "type": "Melee",
+                        "strength": 4,
+                        "damage": 1,
+                        "ap": 1,
+                        "rule": "A wound roll of 6 is resolved at -3 AP"
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Preternatural Speed",
+                    "effect": "All attacks against this model suffer -1 to hit rolls"
+                },
+                {
+                    "name": "Clawed Limbs",
+                    "effect": "Ignore vertical distance when moving"
+                },
+                {
+                    "name": "Synapse Mines",
+                    "effect": "Enemies within 3” lower their Attacks by 1 (min 1)"
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Loxatl Mercenary",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Strygan War Form",
+            "type": "Assault",
+            "stats": {
+                "Movement": 12,
+                "WeaponSkill": "2+",
+                "BallisticSkill": "3+",
+                "Strength": 4,
+                "Toughness": 5,
+                "Wounds": 5,
+                "Attacks": 4,
+                "Leadership": 9,
+                "Save": "4+",
+                "InvulnerableSave": "-"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Claws and Fangs",
+                        "type": "Melee",
+                        "strength": 5,
+                        "damage": 1,
+                        "ap": 0,
+                        "rule": "A wound roll of 6 is resolved with d3 damage"
+                    },
+                    {
+                        "name": "Frenzy of Blades",
+                        "type": "Melee",
+                        "strength": 3,
+                        "damage": 1,
+                        "ap": 1,
+                        "rule": "On any turn in which this model charged or was charged, make 4 additional attacks with this weapon."
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Vampiric Constitution",
+                    "effect": "When this model would lose a wound, roll a d6. On a 4+, discard the wound."
+                },
+                {
+                    "name": "One-Winged Angel",
+                    "effect": "Add +2” to the charge distance for this model"
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Jump,",
+                "Fly",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Shen Exile",
+            "type": "Assault",
+            "stats": {
+                "Movement": 8,
+                "WeaponSkill": "2+",
+                "BallisticSkill": "3+",
+                "Strength": 3,
+                "Toughness": 3,
+                "Wounds": 3,
+                "Attacks": 4,
+                "Leadership": 8,
+                "Save": "7+",
+                "InvulnerableSave": "-"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Shen Wind Blades",
+                        "type": "Melee",
+                        "strength": 4,
+                        "damage": 1,
+                        "ap": 4,
+                        "rule": "A wound roll of 6 is resolved with 3 damage"
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Blade Saint",
+                    "effect": "Any enemy rolling a natural 1 against this model in the Fight phase takes a mortal wound."
+                },
+                {
+                    "name": "Liquid Grace",
+                    "effect": "If an enemy rolls any final misses against this model in the Shooting phase, consider all its attacks to have missed."
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Shen Exile",
+                "Character",
+                "Night Market Denizens"
+            ]
+        },
+        {
+            "name": "Pariah",
+            "type": "Assault",
+            "stats": {
+                "Movement": 7,
+                "WeaponSkill": "3+",
+                "BallisticSkill": "3+",
+                "Strength": 5,
+                "Toughness": 5,
+                "Wounds": 4,
+                "Attacks": 3,
+                "Leadership": 9,
+                "Save": "3+",
+                "InvulnerableSave": "4+"
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Warglaive (Shooting)",
+                        "type": "Assault 2",
+                        "strength": 4,
+                        "damage": "1",
+                        "ap": 1,
+                        "range": 24
+                    },
+                    {
+                        "name": "Warglaive (Melee)",
+                        "type": "Melee",
+                        "strength": 6,
+                        "damage": "D3",
+                        "ap": 3,
+                        "rule": "Successful invulnerable saves made against this must be re-rolled."
+                    }
+                ]
+            },
+            "rules": [
+                {
+                    "name": "Hollow Soul",
+                    "effect": "Enemies within 12” of this treat their WS and BS as one lower."
+                }
+            ],
+            "keywords": [
+                "Infantry",
+                "Shen Exile",
+                "Character",
+                "Night Market Denizens"
+            ]
+        }
+    ]
+}

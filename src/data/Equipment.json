@@ -1,0 +1,886 @@
+{
+    "weapons": [
+        {
+            "name": "Absolvor Bolt Pistol",
+            "type": "Pistol 1",
+            "strength": 5,
+            "damage": "1",
+            "ap": 1,
+            "range": 16
+        },
+        {
+            "name": "Reductor Pistol",
+            "type": "Pistol 1",
+            "strength": 4,
+            "damage": "2",
+            "ap": 3,
+            "range": 3
+        },
+        {
+            "name": "Assault Bolter",
+            "type": "Assault 3",
+            "strength": 5,
+            "damage": "1",
+            "ap": 1,
+            "range": 18
+        },
+        {
+            "name": "Bolt Sniper Rifle",
+            "rule": "This weapon can target a CHARACTER model even if it is not the closest enemy model. Choose one of the profiles below when firing this weapon:",
+            "multiProfiles": [
+                {
+                    "name": "Hyperfrag Round",
+                    "type": "Heavy D3",
+                    "strength": 5,
+                    "damage": 1,
+                    "ap": 0,
+                    "range": 36
+                },
+                {
+                    "name": "Mortis Round",
+                    "type": "Heavy 1",
+                    "strength": 5,
+                    "damage": "D3",
+                    "ap": 2,
+                    "range": 36,
+                    "rule": "Wound rolls of 6+ inflict an additional mortal wound."
+                },
+                {
+                    "name": "Executioner Round",
+                    "type": "Heavy 1",
+                    "strength": 5,
+                    "damage": 1,
+                    "ap": 1,
+                    "range": 36,
+                    "rule": "This weapon can target models that are not visible to the bearer. Targets saving throws do not benefit from cover. Add +2 to hit when firing this weapon"
+                }
+            ]
+        },
+        {
+            "name": "Bolt Pistol",
+            "type": "Pistol 1",
+            "strength": 4,
+            "damage": "1",
+            "ap": 0,
+            "range": 12
+        },
+        {
+            "name": "Heavy Bolt Pistol",
+            "type": "Pistol 1",
+            "strength": 4,
+            "damage": "1",
+            "ap": 1,
+            "range": 12
+        },
+        {
+            "name": "Frag Grenades",
+            "type": "Grenade D6",
+            "strength": "*",
+            "damage": "*",
+            "ap": "*",
+            "range": 6
+        },
+        {
+            "name": "Shock Grenades",
+            "type": "Grenade D3",
+            "strength": 3,
+            "damage": 1,
+            "ap": 0,
+            "range": 6,
+            "rule": "If an enemy INFANTRY model is hit by this, it cannot fire Overwatch and must subtract 1 from any hit rolls model."
+        },
+        {
+            "name": "Volkite Blaster",
+            "type": "Heavy 3",
+            "strength": 6,
+            "damage": 1,
+            "ap": 0,
+            "range": 24,
+            "rule": "Wound rolls of 6+ cause an additional mortal wound."
+        },
+        {
+            "name": "Krag Grenades",
+            "type": "Grenade 1",
+            "strength": 6,
+            "damage": "D3",
+            "range": 6,
+            "ap": 1
+        },
+        {
+            "name": "Corvus Hammer",
+            "type": "Melee",
+            "strength": "+1",
+            "damage": "1",
+            "ap": 1,
+            "rule": "Each wound roll of 6+ causes D3 damage."
+        },
+        {
+            "name": "Omnissian Axe",
+            "type": "Melee",
+            "strength": "+1",
+            "damage": "2",
+            "ap": 2
+        },
+        {
+            "name": "Arc Claw",
+            "type": "Melee",
+            "strength": "+1",
+            "damage": "1",
+            "ap": 1,
+            "rule": "When attacking a VEHICLE, this weapon has a Damage of D3."
+        },
+        {
+            "name": "Blessed Blade",
+            "type": "Melee",
+            "strength": "+2",
+            "damage": "D3",
+            "ap": 3
+        },
+        {
+            "name": "Crozius Arcanum",
+            "type": "Melee",
+            "strength": "+1",
+            "damage": 2,
+            "ap": 1
+        },
+        {
+            "name": "Flail of the Unforgiven",
+            "type": "Melee",
+            "strength": "+2",
+            "damage": 2,
+            "ap": 3
+        },
+        {
+            "name": "Mace of Absolution",
+            "type": "Melee",
+            "strength": "x2",
+            "damage": 3,
+            "ap": 2
+        },
+        {
+            "name": "Blade of Caliban",
+            "type": "Melee",
+            "strength": "+3",
+            "damage": "D3",
+            "ap": 3
+        },
+        {
+            "name": "Halberd of Caliban",
+            "type": "Melee",
+            "strength": "+3",
+            "damage": "D3",
+            "ap": 4,
+            "rule": "Make an additional D3 attacks if the target unit contains 5 or more models."
+        },
+        {
+            "name": "Power Axe",
+            "type": "Melee",
+            "strength": "+1",
+            "damage": 1,
+            "ap": 2
+        },
+        {
+            "name": "Power Maul",
+            "type": "Melee",
+            "strength": "+2",
+            "damage": 1,
+            "ap": 1
+        },
+        {
+            "name": "Combat Knife",
+            "type": "Melee",
+            "strength": "user",
+            "damage": "1",
+            "ap": 0,
+            "rule": "Gain +1 attack with this weapon."
+        },
+        {
+            "name": "Chainsword",
+            "type": "Melee",
+            "strength": "user",
+            "damage": "1",
+            "ap": 0,
+            "rule": "Gain +1 attack with this weapon."
+        },
+        {
+            "name": "Force Sword",
+            "type": "Melee",
+            "strength": "user",
+            "damage": "D3",
+            "ap": 3
+        },
+        {
+            "name": "Accelerator Autocannon",
+            "type": "Heavy 2",
+            "strength": 7,
+            "damage": "2",
+            "ap": 2,
+            "range": 48
+        },
+        {
+            "name": "Force Stave",
+            "type": "Melee",
+            "strength": "+2",
+            "damage": "D3",
+            "ap": 1
+        },
+        {
+            "name": "Power Sword",
+            "type": "Melee",
+            "strength": "user",
+            "damage": 1,
+            "ap": 3
+        },
+        {
+            "name": "Power Fist",
+            "type": "Melee",
+            "strength": "x2",
+            "damage": "D3",
+            "ap": 3,
+            "rule": "Subtract 1 from the to hit roll when attacking with this."
+        },
+        {
+            "name": "Servo-Arm",
+            "type": "Melee",
+            "strength": "x2",
+            "damage": "3",
+            "ap": 2,
+            "rule": "This weapon can only be used for 1 attack at a time. Subtract 1 from the to hit roll when attacking with this."
+        },
+        {
+            "name": "Inferno Pistol",
+            "type": "Pistol 1",
+            "strength": 8,
+            "damage": "D6",
+            "ap": 4,
+            "range": 6,
+            "rule": "Roll two D6 for damage on targets withing half range. Discard the lower result."
+        },
+        {
+            "name": "Heavy Bolter",
+            "type": "Heavy 3",
+            "strength": 5,
+            "damage": 1,
+            "ap": 1,
+            "range": 36
+        },
+        {
+            "name": "Cognis Flamer",
+            "type": "Assault D6",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 8,
+            "rule": "This weapon hits automatically. When firing Overwatch, roll two dice for the amount of attacks and discard the lowest."
+        },
+        {
+            "name": "Flamer",
+            "type": "Assault D6",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 8,
+            "rule": "This weapon hits automatically."
+        },
+        {
+            "name": "Hand Flamer",
+            "type": "Pistol D6",
+            "strength": 3,
+            "damage": 1,
+            "ap": 0,
+            "range": 6,
+            "rule": "This weapon hits automatically."
+        },
+        {
+            "name": "Laspistol",
+            "type": "Pistol 1",
+            "strength": 3,
+            "damage": 1,
+            "ap": 0,
+            "range": 12
+        },
+        {
+            "name": "Heavy Arc Rifle",
+            "type": "Heavy 2",
+            "strength": 6,
+            "damage": "D3",
+            "ap": 2,
+            "range": 36,
+            "rule": "When attacking a VEHICLE, this weapon has a Damage of D6."
+        },
+        {
+            "name": "Bike with Plasma Talon",
+            "rule": "When firing this weapon, choose one of the profiles below.",
+            "multiProfiles": [
+                {
+                    "name": "Standard",
+                    "type": "Assault 2",
+                    "strength": 7,
+                    "damage": 1,
+                    "ap": 3,
+                    "range": 18
+                },
+                {
+                    "name": "Supercharge",
+                    "type": "Assault 2",
+                    "strength": 8,
+                    "damage": 2,
+                    "ap": 3,
+                    "range": 18,
+                    "rule": "On a hit roll of 1, the bearer is slain (after attack is resolved)"
+                }
+            ]
+        },
+        {
+            "name": "Master-Crafted Boltgun",
+            "type": "Rapid Fire 1",
+            "strength": 4,
+            "damage": 2,
+            "ap": 1,
+            "range": 24
+        },
+        {
+            "name": "Master-Crafted Auto Bolt Rifle",
+            "type": "Assault 2",
+            "strength": 4,
+            "damage": 2,
+            "ap": 0,
+            "range": 24
+        },
+        {
+            "name": "Boltgun",
+            "type": "Rapid Fire 1",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 24
+        },
+        {
+            "name": "Storm Bolter",
+            "type": "Rapid Fire 2",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 24
+        },
+        {
+            "name": "Combi-Bolter",
+            "type": "Rapid Fire 2",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 24
+        },
+        {
+            "name": "Astartes Shotgun",
+            "type": "Assault 2",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 12,
+            "rule": "Add +1 Strength if the target is within half range."
+        },
+        {
+            "name": "Combi-Plasma",
+            "rule": "Choose one or two of the profiles below. If you choose both, subtract 1 from all hit rolls for this weapon.",
+            "multiProfiles": [
+                {
+                    "name": "Boltgun",
+                    "type": "Rapid Fire 1",
+                    "strength": 4,
+                    "damage": 1,
+                    "ap": 0,
+                    "range": 24
+                },
+                {
+                    "name": "Plasma Gun",
+                    "rule": "When firing this weapon, choose one of the profiles below.",
+                    "multiProfiles": [
+                        {
+                            "name": "Standard",
+                            "type": "Rapid Fire 1",
+                            "strength": 7,
+                            "damage": 1,
+                            "ap": 3,
+                            "range": 24
+                        },
+                        {
+                            "name": "Supercharge",
+                            "type": "Rapid Fire 1",
+                            "strength": 8,
+                            "damage": 2,
+                            "ap": 3,
+                            "range": 24,
+                            "rule": "On a hit roll of 1, the bearer is slain (after attack is resolved)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Boltstorm Gauntlet",
+            "multiProfiles": [
+                {
+                    "name": "Shooting",
+                    "type": "Pistol 3",
+                    "strength": 4,
+                    "damage": 1,
+                    "ap": 0,
+                    "range": 12
+                },
+                {
+                    "name": "Melee",
+                    "type": "Melee",
+                    "strength": "x2",
+                    "damage": "D3",
+                    "ap": 3,
+                    "rule": "Subtract 1 from the to hit roll when attacking with this."
+                }
+            ]
+        },
+        {
+            "name": "Auto Boltstorm Gauntlets",
+            "multiProfiles": [
+                {
+                    "name": "Shooting",
+                    "type": "Assault 6",
+                    "strength": 4,
+                    "damage": 1,
+                    "ap": 0,
+                    "range": 18
+                },
+                {
+                    "name": "Melee",
+                    "type": "Melee",
+                    "strength": "x2",
+                    "damage": "D3",
+                    "ap": 3,
+                    "rule": "Subtract 1 from the to hit roll when attacking with this."
+                }
+            ]
+        },
+        {
+            "name": "Fragstorm Grenade Launcher",
+            "type": "Assault D6",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 18
+        },
+        {
+            "name": "Plasma Incinerator",
+            "rule": "When firing this weapon, choose one of the profiles below.",
+            "multiProfiles": [
+                {
+                    "name": "Standard",
+                    "type": "Rapid Fire 1",
+                    "strength": 7,
+                    "damage": 1,
+                    "ap": 4,
+                    "range": 30
+                },
+                {
+                    "name": "Supercharge",
+                    "type": "Rapid Fire 1",
+                    "strength": 8,
+                    "damage": 2,
+                    "ap": 4,
+                    "range": 30,
+                    "rule": "On a hit roll of 1, the bearer is slain (after attack is resolved)"
+                }
+            ]
+        },
+        {
+            "name": "Bike with Twin Boltgun",
+            "type": "Rapid Fire 2",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 24
+        },
+        {
+            "name": "Auto Bolt Rifle",
+            "type": "Assault 2",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 24
+        },
+        {
+            "name": "Bolt Rifle",
+            "type": "Rapid Fire 1",
+            "strength": 4,
+            "damage": 1,
+            "ap": 1,
+            "range": 30
+        },
+        {
+            "name": "Marksman Bolt Carbine",
+            "type": "Rapid Fire 1",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 24,
+            "rule": "On a hit roll of 6, the weapon automatically wounds the target"
+        },
+        {
+            "name": "Burst Cannon",
+            "type": "Assault 4",
+            "strength": 5,
+            "damage": 1,
+            "ap": 0,
+            "range": 18
+        },
+        {
+            "name": "Pulse Rifle",
+            "type": "Rapid Fire 1",
+            "strength": 5,
+            "damage": 1,
+            "ap": 0,
+            "range": 30
+        },
+        {
+            "name": "Pulse Carbine",
+            "type": "Assault 1",
+            "strength": 5,
+            "damage": 1,
+            "ap": 0,
+            "range": 18
+        },
+        {
+            "name": "Markerlight",
+            "type": "Heavy 1",
+            "strength": "-",
+            "damage": "-",
+            "ap": "-",
+            "range": 36,
+            "rule": "See Markerlight table"
+        },
+        {
+            "name": "Photon grenade",
+            "type": "Grenade D6",
+            "strength": "-",
+            "damage": "-",
+            "ap": "-",
+            "range": 12,
+            "rule": "Your opponent must subtract 1 from any hit rolls made for INFANTRY units that were hit by this weapon until the end of the turn."
+        },
+        {
+            "name": "Heavy Rail Rifle",
+            "type": "Heavy 2",
+            "strength": 8,
+            "damage": "D6",
+            "ap": 4,
+            "range": 60,
+            "rule": "Each time you make a wound roll of 6+ for this weapon, the target unit suffers a mortal wound in addition to the normal damage."
+        },
+        {
+            "name": "Airbursting Fragmentation Projector",
+            "type": "Assault D6",
+            "strength": 4,
+            "damage": 1,
+            "ap": 0,
+            "range": 18,
+            "rule": "This weapon can target units that are not visible to the bearer."
+        },
+        {
+            "name": "Cyclic Ion Blaster",
+            "rule": "When firing this weapon, choose one of the profiles below.",
+            "multiProfiles": [
+                {
+                    "name": "Standard",
+                    "type": "Assault 3",
+                    "strength": 7,
+                    "damage": 1,
+                    "ap": 1,
+                    "range": 18
+                },
+                {
+                    "name": "Overcharge",
+                    "type": "Assault 3",
+                    "strength": 8,
+                    "damage": "D3",
+                    "ap": 1,
+                    "range": 18,
+                    "rule": "On a hit roll of 1, the bearer is slain (after attack is resolved)"
+                }
+            ]
+        },
+        {
+            "name": "Fusion blaster",
+            "type": "Assault 1",
+            "strength": 8,
+            "damage": "D6",
+            "ap": 4,
+            "range": 18,
+            "rule": "Roll two D6 for damage on targets withing half range. Discard the lower result."
+        },
+        {
+            "name": "Missile pod",
+            "type": "Assault 2",
+            "strength": 7,
+            "damage": "D3",
+            "ap": 1,
+            "range": 36
+        },
+        {
+            "name": "Plasma rifle",
+            "type": "Rapid Fire 1",
+            "strength": 6,
+            "damage": 1,
+            "ap": 3,
+            "range": 24
+        },
+        {
+            "name": "Pulse Blaster",
+            "rule": "When firing this weapon, choose one of the profiles below.",
+            "multiProfiles": [
+                {
+                    "name": "Close range",
+                    "type": "Assault 2",
+                    "strength": 6,
+                    "damage": 1,
+                    "ap": 2,
+                    "range": 5
+                },
+                {
+                    "name": "Medium range",
+                    "type": "Assault 2",
+                    "strength": 5,
+                    "damage": 1,
+                    "ap": 1,
+                    "range": 10
+                },
+                {
+                    "name": "Close range",
+                    "type": "Assault 2",
+                    "strength": 4,
+                    "damage": 1,
+                    "ap": 0,
+                    "range": 15
+                }
+            ]
+        },
+        {
+            "name": "Ion Rifle",
+            "rule": "When firing this weapon, choose one of the profiles below.",
+            "multiProfiles": [
+                {
+                    "name": "Standard",
+                    "type": "Rapid Fire 1",
+                    "strength": 7,
+                    "damage": 1,
+                    "ap": 1,
+                    "range": 30
+                },
+                {
+                    "name": "Overcharge",
+                    "type": "Heavy 3",
+                    "strength": 8,
+                    "damage": 2,
+                    "ap": 1,
+                    "range": 30,
+                    "rule": "On a hit roll of 1, the bearer is slain (after attack is resolved)"
+                }
+            ]
+        },
+        {
+            "name": "Rail Rifle",
+            "rule": "Wound rolls of 6+ cause an additional mortal wound.",
+            "type": "Rapid Fire 1",
+            "strength": 6,
+            "damage": "D3",
+            "ap": 4,
+            "range": 30
+        },
+        {
+            "name": "Rail Carbine",
+            "rule": "Wound rolls of 6+ cause an additional mortal wound.",
+            "type": "Assault 2",
+            "strength": 6,
+            "damage": "D3",
+            "ap": 4,
+            "range": 18,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Kodachi",
+            "rule": "Wound rolls of 6+ are resolved at AP 4 and Damage 2.",
+            "type": "Melee",
+            "strength": "user",
+            "damage": 1,
+            "ap": 1,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Shard",
+            "rule": "This weapon never requires more than 3+ to hit.",
+            "type": "Rapid Fire 1",
+            "strength": 4,
+            "damage": 2,
+            "ap": 1,
+            "range": 24,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Widowmaker",
+            "rule": "This weapon hits automatically.",
+            "type": "Assault D6",
+            "strength": 4,
+            "damage": 1,
+            "ap": 1,
+            "range": 12,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Lucia's Curtana",
+            "rule": "Once per mission, invoke a single Act of Faith that affects the bearer. This does not count against the number of Acts of Faith you have used this phase.",
+            "type": "Melee",
+            "strength": "+2",
+            "damage": 1,
+            "ap": 3,
+            "isArmouryItem": true
+        }
+    ],
+    "otherEquipment": [
+        {
+            "name": "Tartaros Armour",
+            "effect": "This model has a 5+ invulnerable save."
+        },
+        {
+            "name": "Storm Shield",
+            "effect": "This model has a 3+ invulnerable save."
+        },
+        {
+            "name": "Sniper Training",
+            "effect": "(Team Leader only) When this model remained stationary, re-roll 'To Hit' rolls of 1.",
+            "price": 5,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Compact Stimulant Injector",
+            "effect": "(Team Leader only) Roll a dice each time this model suffers a wound, on a roll of 6 ignore it.",
+            "price": 5,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Stabilizing Jet",
+            "effect": "(Jet Pack only) +2” when advancing",
+            "price": 5,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Tartaros Armour",
+            "effect": "This model has a 5+ invulnerable save."
+        },
+        {
+            "name": "Medicae Mechadendrite",
+            "effect": "At the end of your Movement phase, this model can attempt to heal a model or revive a single model. Nominate a model who was killed in the previous turn and was within 3” of the healing models’ current position, on a 4+ the model is revived with 1 wound remaining. After attempting the revive the equipped model must skip it actions for all other phases this turn. Alternatively, select a wounded model within 3”. That model immediately regains 1 wound.",
+            "price": 10
+        },
+        {
+            "name": "Ballistic Mechadendrite",
+            "effect": "The bearer may purchase an additional weapon from the Pistols or Magos Special weapons list which is fired with a -1 to BS. This upgrade may be taken twice by the same model.",
+            "price": 5
+        },
+        {
+            "name": "Heavy Armature Legs",
+            "effect": "This model never suffers the penalty for moving and firing heavy weapons and cannot be moved by enemy models. If the equipped model advances its must always advance by D3”.",
+            "price": 5,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Marksman Honour",
+            "effect": "(Shas'ui only) Grants the model an additional attack with one of its ranged weapons each shooting phase.",
+            "price": 15,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Hardwired Support System",
+            "effect": "(Battlesuit only) The model may take an item from the Support Systems list, increasing it’s cost by 50% rounding up. Advanced Targeting System and Shield Generator’s cost is doubled instead.",
+            "price": 0,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Iridium Armour",
+            "effect": "(Crisis only) This model has a 2+ armour save.",
+            "price": 15,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Blacksun Visor",
+            "effect": "Ignore negative modifiers to hit rolls in the shooting phase that result from any special rules the target model has.",
+            "price": 5,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Jump Pack",
+            "effect": "Increase this models movement to 12” and gain the Jump Pack and Fly keywords.",
+            "price": 5
+        },
+        {
+            "name": "Advanced targeting system",
+            "effect": "Increase the AP characteristic of all weapons by 1.",
+            "price": 12
+        },
+        {
+            "name": "Counterfire defence system",
+            "effect": "May re-rolls failed hit rolls when firing Overwatch.",
+            "price": 10
+        },
+        {
+            "name": "Drone controller",
+            "effect": "<SEPT> Drones within 6” gain +1 to hit.",
+            "price": 5
+        },
+        {
+            "name": "Extended Drone Controller",
+            "effect": "Gun Drones or Marker Drones within 12”gain +1 to hit.",
+            "price": 10,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Early warning override",
+            "effect": "If any enemy model are set up within 12” as the result of an ability that allows them to arrive mid-battle, then at the end of that phase you may shoot at one of those models as if it were your Shooting phase, but you must subtract 1 from hit rolls when resolving these shots.",
+            "price": 5
+        },
+        {
+            "name": "Multi-tracker",
+            "effect": "Re-roll hit rolls of 1 in the Shooting phase if it fires all of its weapons at the same target and that target contains 5 or more models.",
+            "price": 10
+        },
+        {
+            "name": "Shield generator",
+            "effect": "This model has a 4+ invulnerable save.",
+            "price": 8
+        },
+        {
+            "name": "Hard-Wired Light Shield",
+            "effect": "(Team Leader only) This model has a 5+ invulnerable save.",
+            "price": 15,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Command Node",
+            "effect": "(Team Leader only) Increases the models Inspiring Presence radius to 12”.",
+            "price": 10,
+            "isArmouryItem": true
+        },
+        {
+            "name": "XV05 Armour",
+            "effect": "(Team Leader only) This model has a 3+ armour save.",
+            "price": 5,
+            "isArmouryItem": true
+        },
+        {
+            "name": "Target lock",
+            "effect": "Does not not suffer the penalty for moving and firing Heavy weapons, or for Advancing and firing Assault weapons. May also Advance and fire Rapid Fire weapons (at -1 to hit)",
+            "price": 6
+        },
+        {
+            "name": "Velocity tracker",
+            "effect": "Gain +1 to hit when it shooting at a target that can FLY.",
+            "price": 2
+        }
+    ]
+}

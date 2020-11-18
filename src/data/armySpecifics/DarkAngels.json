@@ -1,0 +1,281 @@
+{
+    "DarkAngels": {
+        "Keywords": [
+            "Imperium",
+            "Adeptus Astartes",
+            "Dark Angels"
+        ],
+        "ModelAllowance": {
+            "Core": 20,
+            "Special": 3,
+            "Leader": 1
+        },
+        "ArmyRules": [
+            {
+                "name": "Grim Resolve",
+                "effect": "Re-roll hit rolls of 1 for this model whenever it shoots (including Overwatch) as long as it remains stationary."
+            },
+            {
+                "name": "And They Shall Know No Fear",
+                "effect": "Re-roll failed Morale tests for this model."
+            }
+        ],
+        "Philosophies": [
+            {
+                "name": "Unwavering Zeal",
+                "tp": 2,
+                "text": "If you are the first player to fail a Morale test including Nerve test, you lose 2 TP."
+            }
+        ],
+        "WeaponPriceList": [
+            {
+                "name": "Heavy Bolter",
+                "price": 10
+            },
+            {
+                "name": "Auto Boltstorm Gauntlets",
+                "price": 12
+            },
+            {
+                "name": "Fragstorm Grenade Launcher",
+                "price": 4
+            },
+            {
+                "name": "Plasma Incinerator",
+                "price": 15
+            },
+            {
+                "name": "Bike with Twin Boltgun",
+                "price": 2
+            },
+            {
+                "name": "Auto Bolt Rifle",
+                "price": 2
+            },
+            {
+                "name": "Bolt Sniper Rifle",
+                "price": 3
+            }
+        ],
+        "UnitList": [
+            {
+                "name": "Aggressor Sergeant",
+                "type": "Leader",
+                "price": 35,
+                "stats": {
+                    "Movement": 5,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 4,
+                    "Attacks": 3,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Fragstorm Grenade Launcher",
+                        "Auto Boltstorm Gauntlets"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "Dark Angels",
+                    "Aggressors",
+                    "MK X Gravis",
+                    "Infantry",
+                    "Primaris"
+                ],
+                "rules": [
+                    "Fire Storm",
+                    "Relentless Advance"
+                ]
+            },
+            {
+                "name": "Aggressor",
+                "type": "Special",
+                "price": 21,
+                "stats": {
+                    "Movement": 5,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Fragstorm Grenade Launcher",
+                        "Auto Boltstorm Gauntlets"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "Dark Angels",
+                    "Aggressors",
+                    "MK X Gravis",
+                    "Infantry",
+                    "Primaris"
+                ],
+                "rules": [
+                    "Fire Storm",
+                    "Relentless Advance"
+                ]
+            },
+            {
+                "name": "Eliminator",
+                "type": "Core",
+                "price": 18,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Sniper Rifle",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "Dark Angels",
+                    "Eliminators",
+                    "Phobos",
+                    "Infantry",
+                    "Primaris"
+                ],
+                "rules": [
+                    "Camo Cloak",
+                    "Concealed Position"
+                ]
+            },
+            {
+                "name": "Ravenwing Biker",
+                "type": "Core",
+                "price": 25,
+                "stats": {
+                    "Movement": 14,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 2,
+                    "Attacks": 1,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bike with Twin Boltgun",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "Dark Angels",
+                    "Biker",
+                    "Ravenwing Bike Squad",
+                    "Ravenwing"
+                ],
+                "rules": [
+                    "Jink",
+                    "Turbo-boost"
+                ]
+            },
+            {
+                "name": "Ravenwing Black Knight",
+                "type": "Special",
+                "price": 46,
+                "stats": {
+                    "Movement": 14,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades",
+                        "Corvus Hammer",
+                        "Bike with Plasma Talon"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "Dark Angels",
+                    "Biker",
+                    "Ravenwing Black Knights",
+                    "Ravenwing"
+                ],
+                "rules": [
+                    "Jink",
+                    "Turbo-boost"
+                ]
+            },
+            {
+                "name": "Hellblaster",
+                "type": "Special",
+                "price": 18,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades",
+                        "Plasma Incinerator"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "Dark Angels",
+                    "Hellblasters",
+                    "Infantry",
+                    "Primaris"
+                ]
+            }
+        ]
+    }
+}

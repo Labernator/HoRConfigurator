@@ -1,0 +1,92 @@
+{
+    "Title": "The Emperors Faithful",
+    "Faction": "Adepta Sororitas",
+    "Philosophy": "World on Fire",
+    "Alignment": "Order of the Valorous Heart",
+    "Roster": [
+        {
+            "name": "Canoness Regular",
+            "price": 35,
+            "stats": {
+                "Movement": 12
+            },
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Boondock Machinegun",
+                        "isLegendary": true,
+                        "price": 20,
+                        "replacing": "Bolt Pistol",
+                        "range": 18,
+                        "type": "Assault 1",
+                        "strength": 8,
+                        "ap": 4,
+                        "damage": "D6",
+                        "rule": [
+                            {
+                                "name": "Seeking",
+                                "effect": "Add 1 to hit rolls for this weapon while targeting a unit that is in cover."
+                            },
+                            {
+                                "name": "Skykiller",
+                                "effect": "Add 1 to all hit rolls made for this weapon against targets that can Fly."
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Blessed Blade",
+                        "replacing": "Chainsword"
+                    }
+                ],
+                "otherEquipment": [
+                    "Jump Pack"
+                ]
+            },
+            "keywords": [
+                "Jump Pack",
+                "Fly"
+            ]
+        },
+        {
+            "name": "Celestian",
+            "amount": 2
+        },
+        {
+            "name": "Celestian",
+            "amount": 2,
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Flamer",
+                        "replacing": [
+                            "Boltgun"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Seraphim",
+            "amount": 2
+        },
+        {
+            "name": "Seraphim",
+            "amount": 2,
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Hand Flamer",
+                        "amount": 2,
+                        "replacing": "Bolt Pistol"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Ministorum Crusader"
+        },
+        {
+            "name": "Imagifier"
+        }
+    ]
+}

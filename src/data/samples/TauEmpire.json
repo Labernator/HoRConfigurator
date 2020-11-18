@@ -1,0 +1,50 @@
+{
+    "Title": "头",
+    "Faction": "Tau Empire",
+    "Alignment": "Sa’cea",
+    "Philosophy": "One Track Mind",
+    "ScenariosPlayed": 1,
+    "Roster": [
+        {
+            "name": "Crisis Shas'vre",
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Cyclic ion blaster",
+                        "replacing": [
+                            "Burst Cannon"
+                        ]
+                    }
+                ],
+                "otherEquipment": [
+                    "Sniper Training",
+                    "Drone controller"
+                ]
+            }
+        },
+        {
+            "name": "Fire Warrior",
+            "amount": 7
+        },
+        {
+            "name": "Crisis Shas'ui",
+            "amount": 2,
+            "equipment": {
+                "otherEquipment": [
+                    "Stabilizing Jet"
+                ]
+            }
+        },
+        {
+            "name": "Broadside Shas'ui"
+        },
+        {
+            "name": "MV4 Shield Drone [Tactical Drone]",
+            "amount": 3
+        },
+        {
+            "name": "MV1 Gun Drone [Tactical Drone]",
+            "amount": 2
+        }
+    ]
+}

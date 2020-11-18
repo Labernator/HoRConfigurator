@@ -1,0 +1,55 @@
+{
+    "Title": "Hunters of the Fallen",
+    "Faction": "Dark Angels",
+    "Philosophy": "Unwavering Zeal",
+    "ScenariosPlayed": 1,
+    "Roster": [
+        {
+            "name": "Aggressor Sergeant",
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Heretics Bane",
+                        "type": "Assault 3",
+                        "strength": 6,
+                        "damage": 1,
+                        "ap": 1,
+                        "range": 18,
+                        "rule": [
+                            {
+                                "name": "Scoped",
+                                "effect": "Add 1 to hit when firing this weapon stationary."
+                            },
+                            {
+                                "name": "Shield Breaker",
+                                "effect": "An enemy model that loses one or more wounds from this, loses its invulnerable save for the rest of the phase."
+                            }
+                        ],
+                        "replacing": [
+                            "Fragstorm Grenade Launcher"
+                        ],
+                        "isLegendary": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Aggressor",
+            "type": "Core",
+            "amount": 2
+        },
+        {
+            "name": "Eliminator"
+        },
+        {
+            "name": "Ravenwing Biker"
+        },
+        {
+            "name": "Ravenwing Black Knight"
+        },
+        {
+            "name": "Hellblaster",
+            "amount": 2
+        }
+    ]
+}

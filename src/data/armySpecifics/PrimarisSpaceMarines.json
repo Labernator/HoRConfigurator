@@ -1,0 +1,528 @@
+{
+    "PrimarisSpaceMarines": {
+        "Keywords": [
+            "Imperium",
+            "Adeptus Astartes",
+            "<CHAPTER>"
+        ],
+        "ArmyRules": [
+            {
+                "name": "Defenders of Humanity",
+                "effect": "If a model is in range of an objective marker it controls the marker even if there are more enemy models within range."
+            },
+            {
+                "name": "And They Shall Know No Fear",
+                "effect": "Re-roll failed Morale tests for this model."
+            }
+        ],
+        "Alignments": [
+            {
+                "name": "Novamarines",
+                "effect": "Re-roll failed wound rolls of 1 when attacking a model that does not have the IMPERIUM or CHAOS keyword."
+            }
+        ],
+        "AlignmentPlaceholder": "<CHAPTER>",
+        "ModelAllowance": {
+            "Core": 20,
+            "Special": 3,
+            "Leader": 1
+        },
+        "Philosophies": [
+            {
+                "name": "The Hammer of the Imperium",
+                "tp": 2,
+                "text": "If you are not the first player to use a Tactical Action, you lose 2TP."
+            },
+            {
+                "name": "Quick Reaction Force",
+                "tp": 1,
+                "text": "No model on your team may be equipped with Heavy weapons."
+            }
+        ],
+        "WeaponPriceList": [
+            {
+                "name": "Heavy Bolter",
+                "price": 10
+            },
+            {
+                "name": "Bike with Twin Boltgun",
+                "price": 2
+            },
+            {
+                "name": "Auto Boltstorm Gauntlets",
+                "price": 14
+            },
+            {
+                "name": "Fragstorm Grenade Launcher",
+                "price": 4
+            },
+            {
+                "name": "Plasma Incinerator",
+                "price": 15
+            },
+            {
+                "name": "Bolt Sniper Rifle",
+                "price": 3
+            },
+            {
+                "name": "Accelerator Autocannon",
+                "price": 10
+            },
+            {
+                "name": "Assault Bolter",
+                "price": 15
+            }
+        ],
+        "UnitList": [
+            {
+                "name": "Hellblaster Sergeant",
+                "type": "Leader",
+                "price": 30,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 4,
+                    "Attacks": 3,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Plasma Incinerator",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Hellblasters",
+                    "Sergeant",
+                    "Infantry",
+                    "Primaris"
+                ]
+            },
+            {
+                "name": "Primaris Intercessor",
+                "type": "Core",
+                "price": 17,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Rifle",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Intercessors",
+                    "Infantry",
+                    "Primaris"
+                ]
+            },
+            {
+                "name": "Eliminator",
+                "type": "Core",
+                "price": 18,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Sniper Rifle",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Eliminators",
+                    "Phobos",
+                    "Infantry",
+                    "Primaris"
+                ],
+                "rules": [
+                    "Camo Cloak",
+                    "Concealed Position"
+                ]
+            },
+            {
+                "name": "Assault Marine",
+                "type": "Core",
+                "price": 12,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 1,
+                    "Attacks": 1,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Chainsword",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Assault Squad",
+                    "Infantry"
+                ],
+                "rules": [
+                    "Jump Pack Assault"
+                ]
+            },
+            {
+                "name": "Attack Bike",
+                "type": "Core",
+                "price": 25,
+                "stats": {
+                    "Movement": 14,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 4,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Heavy Bolter",
+                        "Bike with Twin Boltgun",
+                        {
+                            "name": "Bolt Pistol",
+                            "amount": 2
+                        },
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Biker",
+                    "Attack Bike Squad"
+                ],
+                "rules": [
+                    "Turbo-boost"
+                ]
+            },
+            {
+                "name": "Hellblaster",
+                "type": "Special",
+                "price": 18,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades",
+                        "Plasma Incinerator"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Hellblasters",
+                    "Infantry",
+                    "Primaris"
+                ]
+            },
+            {
+                "name": "Aggressor",
+                "type": "Special",
+                "price": 21,
+                "stats": {
+                    "Movement": 5,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Fragstorm Grenade Launcher",
+                        "Auto Boltstorm Gauntlets"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Aggressors",
+                    "MK X Gravis",
+                    "Infantry",
+                    "Primaris"
+                ],
+                "rules": [
+                    "Fire Storm",
+                    "Relentless Advance"
+                ]
+            },
+            {
+                "name": "Infiltrator Helix Adept",
+                "type": "Special",
+                "price": 32,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades",
+                        "Marksman Bolt Carbine"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Apothecary",
+                    "Character"
+                ],
+                "rules": [
+                    "Helix Adept Amendment",
+                    "Smoke Grenade"
+                ]
+            },
+            {
+                "name": "Primaris Lexicanum",
+                "type": "Leader",
+                "price": 63,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 5,
+                    "Attacks": 4,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Psyker",
+                    "Librarian",
+                    "Infantry",
+                    "Primaris"
+                ],
+                "rules": [
+                    "Psychic Hood"
+                ]
+            },
+            {
+                "name": "Infiltrators",
+                "type": "Core",
+                "price": 22,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Intercessors",
+                    "Infantry",
+                    "Primaris"
+                ],
+                "rules": [
+                    "Omni-scrambler",
+                    "Concealed Position"
+                ]
+            },
+            {
+                "name": "Inceptor",
+                "type": "Special",
+                "price": 25,
+                "stats": {
+                    "Movement": 10,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Inceptors",
+                    "Fly",
+                    "Jump Pack",
+                    "MK X Gravis",
+                    "Infantry",
+                    "Primaris"
+                ]
+            },
+            {
+                "name": "Reiver",
+                "type": "Special",
+                "price": 16,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Reivers",
+                    "Phobos",
+                    "Infantry",
+                    "Primaris"
+                ]
+            },
+            {
+                "name": "Primaris Apothecary",
+                "type": "Special",
+                "price": 48,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 3,
+                    "Attacks": 3,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Apothecary",
+                    "Character",
+                    "Infantry",
+                    "Primaris"
+                ]
+            },
+            {
+                "name": "Suppressor",
+                "type": "Special",
+                "price": 18,
+                "stats": {
+                    "Movement": 12,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Fly",
+                    "Jump Pack",
+                    "Infantry",
+                    "Primaris"
+                ]
+            }
+        ]
+    }
+}

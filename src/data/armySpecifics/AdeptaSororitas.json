@@ -1,0 +1,252 @@
+{
+    "AdeptaSororitas": {
+        "Keywords": [
+            "Imperium",
+            "Adepta Sororitas",
+            "<ORDER>"
+        ],
+        "AlignmentPlaceholder": "<ORDER>",
+        "ModelAllowance": {
+            "Core": 20,
+            "Special": 5,
+            "Leader": 1
+        },
+        "Philosophies": [
+            {
+                "name": "World on Fire",
+                "tp": 2,
+                "text": "Every model that can take a flame weapon has a flame weapon (flamer, combi-flamer, hand flamer, heavy flamer and the Widowmaker are flame weapons)."
+            }
+        ],
+        "WeaponPriceList": [
+            {
+                "name": "Blessed Blade",
+                "price": 9
+            },
+            {
+                "name": "Inferno Pistol",
+                "price": 7
+            },
+            {
+                "name": "Flamer",
+                "price": 6
+            },
+            {
+                "name": "Hand Flamer",
+                "price": 1
+            },
+            {
+                "name": "Power Sword",
+                "price": 4
+            },
+            {
+                "name": "Lucia's Curtana",
+                "price": 10
+            },
+            {
+                "name": "Widowmaker",
+                "price": 13
+            },
+            {
+                "name": "Shard",
+                "price": 5
+            }
+        ],
+        "UnitList": [
+            {
+                "name": "Canoness Regular",
+                "type": "Leader",
+                "price": 40,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "2+",
+                    "BallisticSkill": "2+",
+                    "Strength": 3,
+                    "Toughness": 3,
+                    "Wounds": 4,
+                    "Attacks": 3,
+                    "Leadership": 9,
+                    "Save": "3+",
+                    "InvulnerableSave": "6+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Pistol",
+                        "Chainsword",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adepta Sororitas",
+                    "<ORDER>",
+                    "Infantry",
+                    "Character",
+                    "Canoness Regular"
+                ],
+                "rules": [
+                    "Acts of Faith",
+                    "Sacred Rites",
+                    "Shield of Faith",
+                    "Guide the Faithful",
+                    "Rosarius"
+                ]
+            },
+            {
+                "name": "Celestian",
+                "type": "Core",
+                "price": 10,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 3,
+                    "Toughness": 3,
+                    "Wounds": 1,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "6+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Boltgun",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adepta Sororitas",
+                    "<ORDER>",
+                    "Infantry",
+                    "Celestian"
+                ],
+                "rules": [
+                    "Acts of Faith",
+                    "Sacred Rites",
+                    "Shield of Faith",
+                    "Bodyguard",
+                    "Sworn Protectors"
+                ]
+            },
+            {
+                "name": "Seraphim",
+                "type": "Core",
+                "price": 11,
+                "stats": {
+                    "Movement": 12,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 3,
+                    "Toughness": 3,
+                    "Wounds": 1,
+                    "Attacks": 1,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "5+"
+                },
+                "equipment": {
+                    "weapons": [
+                        {
+                            "name": "Bolt Pistol",
+                            "amount": 2
+                        },
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adepta Sororitas",
+                    "<ORDER>",
+                    "Infantry",
+                    "Seraphim",
+                    "Fly",
+                    "Jump"
+                ],
+                "rules": [
+                    "Acts of Faith",
+                    "Sacred Rites",
+                    "Shield of Faith",
+                    "Angelic Visage",
+                    "Sky Strike"
+                ]
+            },
+            {
+                "name": "Ministorum Crusader",
+                "type": "Core",
+                "price": 9,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "4+",
+                    "Strength": 3,
+                    "Toughness": 3,
+                    "Wounds": 1,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "4+",
+                    "InvulnerableSave": "3+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Power Sword"
+                    ],
+                    "otherEquipment": [
+                        "Storm Shield"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Ministorum",
+                    "Infantry",
+                    "Crusaders"
+                ],
+                "rules": [
+                    "Zealot",
+                    "Spiritual Fortitude"
+                ]
+            },
+            {
+                "name": "Imagifier",
+                "type": "Special",
+                "price": 30,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 3,
+                    "Toughness": 3,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "6+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adepta Sororitas",
+                    "<ORDER>",
+                    "Infantry",
+                    "Imagifier"
+                ],
+                "rules": [
+                    "Acts of Faith",
+                    "Sacred Rites",
+                    "Shield of Faith",
+                    "Litany of Deeds"
+                ]
+            }
+        ]
+    }
+}

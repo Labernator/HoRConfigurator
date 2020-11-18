@@ -1,0 +1,21 @@
+{
+    "Deathwatch": {
+        "Keywords": [
+            "Imperium",
+            "Adeptus Astartes",
+            "Deathwatch"
+        ],
+        "ModelAllowance": {
+            "Core": 20,
+            "Special": 3,
+            "Leader": 1
+        },
+        "WeaponPriceList": [
+            {
+                "name": "Heavy Bolter",
+                "price": 10
+            }
+        ],
+        "UnitPriceList": []
+    }
+}

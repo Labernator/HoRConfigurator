@@ -1,0 +1,39 @@
+{
+    "Title": "Primaris Bois",
+    "Faction": "Primaris Space Marines",
+    "Alignment": "Novamarines",
+    "Philosophy": "The Hammer of the Imperium",
+    "ScenariosPlayed": 1,
+    "Roster": [
+        {
+            "name": "Hellblaster Sergeant",
+            "rules": [
+                "Rites of War"
+            ]
+        },
+        {
+            "name": "Primaris Intercessor"
+        },
+        {
+            "name": "Eliminator"
+        },
+        {
+            "name": "Assault Marine"
+        },
+        {
+            "name": "Attack Bike"
+        },
+        {
+            "name": "Hellblaster",
+            "type": "Core",
+            "amount": 2
+        },
+        {
+            "name": "Aggressor",
+            "amount": 2
+        },
+        {
+            "name": "Infiltrator Helix Adept"
+        }
+    ]
+}

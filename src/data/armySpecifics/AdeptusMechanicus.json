@@ -1,0 +1,175 @@
+{
+    "AdeptusMechanicus": {
+        "Keywords": [
+            "Imperium",
+            "Adeptus Mechanicus",
+            "Forge World"
+        ],
+        "ArmyRules": [
+            {
+                "name": "Agripinaa – Staunch Defenders",
+                "effect": "When firing Overwatch, hit on a roll of 5+."
+            },
+            {
+                "name": "Soldiers of the Machine God",
+                "effect": "If a model is in range of an objective marker it controls the marker even if there are more enemy models within range."
+            }
+        ],
+        "ModelAllowance": {
+            "Core": 20,
+            "Special": 5,
+            "Leader": 1
+        },
+        "Philosophies": [
+            {
+                "name": "A More Subtle Touch",
+                "tp": 2,
+                "text": "Your team contains no models with the SKITARII keyword."
+            }
+        ],
+        "WeaponPriceList": [
+            {
+                "name": "Cognis Flamer",
+                "price": 10
+            },
+            {
+                "name": "Volkite Blaster",
+                "price": 8
+            },
+            {
+                "name": "Combi-Plasma",
+                "price": 11
+            },
+            {
+                "name": "Heavy Arc Rifle",
+                "price": 8
+            },
+            {
+                "name": "Arc Claw",
+                "price": 4
+            },
+            {
+                "name": "Servo-Arm",
+                "price": 12
+            }
+        ],
+        "UnitList": [
+            {
+                "name": "Tech Priest Procurator",
+                "type": "Leader",
+                "price": 55,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "4+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 4,
+                    "Attacks": 3,
+                    "Leadership": 8,
+                    "Save": "3+",
+                    "InvulnerableSave": "5+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Omnissian Axe"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Mechanicus",
+                    "Forge World",
+                    "Character",
+                    "Infantry",
+                    "Techpriest",
+                    "Procurator",
+                    "Cult Mechanicus"
+                ],
+                "rules": [
+                    "Canticles of the Omnissiah",
+                    "Advanced Bionics",
+                    "Master of Machines",
+                    "Noospheric Fulcrum"
+                ]
+            },
+            {
+                "name": "Kataphron Battle Servitor",
+                "type": "Core",
+                "price": 15,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "4+",
+                    "BallisticSkill": "4+",
+                    "Strength": 5,
+                    "Toughness": 5,
+                    "Wounds": 3,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "6+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Heavy Arc Rifle",
+                        "Arc Claw"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Mechanicus",
+                    "Forge World",
+                    "Infantry",
+                    "Cult Mechanicus",
+                    "Kataphron Servitor",
+                    "Servitor"
+                ],
+                "rules": [
+                    "Canticles of the Omnissiah",
+                    "Bionics",
+                    "Heavy Battle Servitor",
+                    "Thermal Shed",
+                    "Heavy Tracks"
+                ]
+            },
+            {
+                "name": "Tech Priest Auctoris",
+                "type": "Special",
+                "price": 30,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "4+",
+                    "BallisticSkill": "4+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "6+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Laspistol",
+                        "Omnissian Axe",
+                        "Servo-Arm"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Mechanicus",
+                    "Forge World",
+                    "Infantry",
+                    "Cult Mechanicus",
+                    "Techpriest",
+                    "Auctoris",
+                    "Magos Biologis"
+                ],
+                "rules": [
+                    "Canticles of the Omnissiah",
+                    "Bionics",
+                    "Magos Biologis"
+                ]
+            }
+        ]
+    }
+}
