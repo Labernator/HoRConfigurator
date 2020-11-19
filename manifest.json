@@ -1,0 +1,8 @@
+{
+  "short_name": "HoR Configuration App",
+  "name": "HoR Configuration App",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
