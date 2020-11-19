@@ -210,3 +210,8 @@ tr>td:first-child {
   word-break: break-all;
   word-wrap: break-word;
 }
+
+.hide-container {
+  position: absolute;
+  top: -10000px;
+}

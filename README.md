@@ -53,13 +53,14 @@ If you want to use other/new units you might need to add new weapons/rules etc. 
 *If your warband is playing in a campaign, enter the number of games already played here to get the right amount of TP*
 > "ScenariosPlayed": 0
 
-### Army Roster - RosterModel[]**
-*An array of complex types* see [Types definition](https://github.com/Labernator/HeraldsOfRuinCoopCampaigns/blob/master/hor-configurator/src/types.ts)
+### Army Roster - Array<RosterModel| string>**
+*An array of strings or complex types* see [Types definition](https://github.com/Labernator/HeraldsOfRuinCoopCampaigns/blob/master/hor-configurator/src/types.ts)
 
 #### Describing a Model/Unit - The Properties
+**Either describe a model by just adding a string with its name. This will lead to the default configuration. Or use an object with these Properties:**
 
 **Name - string**
-*The minimum property that needs to be stated is the name property. If only the name is given, the default configuration of that unit will be used*
+*The minimum property that needs to be stated is the name property. If only the name is given, the default configuration of that unit will be used (analogue to just giving a string not an object)*
 
 > { "name": "Eliminator" }
 

@@ -7,9 +7,9 @@ import { ArmyTacticalPointsRenderer } from "./ArmyTacticalPoints";
 import { ModelSheetRenderer } from "./ModelSheet";
 
 export const WarbandRenderer = (
-    { state, page, rosterPrice, stratagems, fullRender }: { state: RenderWarband; page: { nr: number; total: number }; rosterPrice: number; stratagems: TacticalPoints[]; fullRender?: boolean }) => {
+    { state, page, rosterPrice, stratagems, fullRender, hide }: { state: RenderWarband; page: { nr: number; total: number }; rosterPrice: number; stratagems: TacticalPoints[]; fullRender?: boolean; hide?: boolean }) => {
     const faction = state.Faction as FactionEnum;
-    return <div id={`roster-sheet-container${page.nr}`} className={`${fullRender ? "a4-container" : "pdf-container"}`} style={{ float: "left" }}>
+    return <div id={`roster-sheet-container${page.nr}`} className={`${fullRender ? "a4-container" : "pdf-container"} ${hide ? "hide-container" : ""}`} style={{ float: "left" }}>
         <div className="roster-sheet-title">{`${state.Title} - ${state.Faction} (${rosterPrice} pts)`}</div>
         {page.nr === 1 ?
             <div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CodeEditorContainer } from "../CodeMirror";
 import { FactionEnum, PageMap, RenderModel, Warband } from "../types";
-import { getDetailedRoster, getRosterPrice, getStratagems, getTotalUnitPrice } from "../utility";
+import { getDetailedRoster, getRosterPrice, getStratagems } from "../utility";
 import { Toolbar } from "../utility/Toolbar";
 import { WarbandRenderer } from "../WarbandRendering/WarbandRenderer";
 
@@ -24,7 +24,7 @@ export const WarbandPage = (path: any) => {
 
     const faction = state.Faction as FactionEnum;
     const roster = getDetailedRoster(state.Roster, faction, state.Alignment);
-    const filterRosterToPage = (page: number): RenderModel[] => roster.filter((member) => modelMap.find((entry) => entry.id === `modelsheet-${member.name}-${getTotalUnitPrice(member, faction)}` && entry.page === page));
+    const filterRosterToPage = (page: number): RenderModel[] => roster.filter((member) => modelMap.find((entry) => entry.id === `modelsheet-${member.name}-${member.price}` && entry.page === page));
     const getPageCountFromMap = () => modelMap.map((model) => model.page).filter((page, idx, arr) => arr.indexOf(page) === idx).length;
     const renderPages = () => {
         let pages: JSX.Element[] = [];
@@ -45,7 +45,7 @@ export const WarbandPage = (path: any) => {
     return <div>
         <Toolbar state={state} setState={setState} setEditorVisibility={setEditorVisibility} />
         {modelMap.length ? <div>{renderPages()}</div > : undefined}
-        <WarbandRenderer state={{ ...state, Roster: roster }} page={{ nr: 1, total: 1 }} rosterPrice={getRosterPrice(roster)} stratagems={getStratagems({ ...state, Roster: roster })} fullRender={true} />
+        <WarbandRenderer state={{ ...state, Roster: roster }} page={{ nr: 1, total: 1 }} rosterPrice={getRosterPrice(roster)} stratagems={getStratagems({ ...state, Roster: roster })} fullRender={true} hide={editorVisible} />
         <CodeEditorContainer code={state} visible={editorVisible} onSave={setState} />
     </div >;
 };

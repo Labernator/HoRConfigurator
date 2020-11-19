@@ -19,14 +19,15 @@ export const ensureWeaponExists = (input: MetadataWeapon | MultiProfileWeapon | 
     return input;
 };
 
-export const getDetailedRoster = (roster: RosterModel[], faction: FactionEnum, alignment?: string): RenderModel[] => roster.map((rosterModel) => {
-    const modelMetadata = getModelMetadata(rosterModel.name, faction);
+export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: FactionEnum, alignment?: string): RenderModel[] => roster.map((rosterModel) => {
+    const modelMetadata = typeof (rosterModel) === "string" ? getModelMetadata(rosterModel, faction) : getModelMetadata(rosterModel.name, faction);
+    const harmonizedRosterModel: RosterModel = typeof (rosterModel) === "string" ? { "name": rosterModel } : rosterModel;
     const alignmentPlaceholder = getFactionSpecifics(faction).AlignmentPlaceholder;
     if (!modelMetadata) {
-        throw new Error(`Model ${rosterModel.name} needs to be added to metadata`);
+        throw new Error(`Model ${typeof (rosterModel) === "string" ? rosterModel : rosterModel.name} needs to be added to metadata`);
     }
-    let remixedModel = remixModel(modelMetadata, rosterModel);
-    const ruleStrings = rosterModel.rules ? [...modelMetadata.rules || [], ...rosterModel.rules].filter((keyword, idx, array) => array.indexOf(keyword) === idx) : modelMetadata.rules || [];
+    let remixedModel = remixModel(modelMetadata, harmonizedRosterModel);
+    const ruleStrings = harmonizedRosterModel.rules ? [...modelMetadata.rules || [], ...harmonizedRosterModel.rules].filter((keyword, idx, array) => array.indexOf(keyword) === idx) : modelMetadata.rules || [];
     remixedModel = {
         ...remixedModel,
         keywords: remixedModel.keywords.map((keyword) => keyword === alignmentPlaceholder ? alignment || keyword : keyword),
@@ -43,9 +44,9 @@ export const getDetailedRoster = (roster: RosterModel[], faction: FactionEnum, a
     let rosterWeapons: RenderWeapon[] = [];
     let otherRosterEquipment: OtherEquipment[] | undefined;
     let replacedWeapons: string[] = [];
-    if (rosterModel.equipment || remixedModel.equipment?.weapons) {
-        if (rosterModel.equipment) {
-            rosterWeapons = rosterModel.equipment.weapons?.map((weapon) => {
+    if (harmonizedRosterModel.equipment || remixedModel.equipment?.weapons) {
+        if (harmonizedRosterModel.equipment) {
+            rosterWeapons = harmonizedRosterModel.equipment.weapons?.map((weapon) => {
                 if (typeof (weapon) === "string") {
                     return getWeaponProfile(weapon, faction);
                 }
@@ -63,7 +64,7 @@ export const getDetailedRoster = (roster: RosterModel[], faction: FactionEnum, a
                 }
                 return getWeaponProfile(weapon, faction);
             }) || [];
-            otherRosterEquipment = rosterModel.equipment.otherEquipment?.map((equi) => {
+            otherRosterEquipment = harmonizedRosterModel.equipment.otherEquipment?.map((equi) => {
                 if (typeof (equi) === "string") {
                     return getOtherEquipmentDetails(equi);
                 }

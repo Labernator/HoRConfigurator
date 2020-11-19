@@ -19,7 +19,7 @@ export const ModelEquipmentRenderer = ({ equipment, faction, name }: { equipment
     };
     const weaponNameRender = (weapon: BasicWeapon | SuperBasicWeapon) => {
         if (weapon.isLegendary) {
-            return <td key={`${name}-${weapon.name}-name`}><div>{weapon.name}</div><div><img style={{ height: "20px", padding: "2px" }} src={LegendaryIcon} /></div> </td>;
+            return <td key={`${name}-${weapon.name}-name`}><div>{weapon.name}</div><div><img style={{ height: "20px", padding: "2px" }} alt="LegendaryIcon" src={LegendaryIcon} /></div> </td>;
         } else {
             return <td key={`${name}-${weapon.name}-name`}>{weapon.name} </td>;
         }

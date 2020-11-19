@@ -11,18 +11,10 @@
                 "Rites of War"
             ]
         },
-        {
-            "name": "Primaris Intercessor"
-        },
-        {
-            "name": "Eliminator"
-        },
-        {
-            "name": "Assault Marine"
-        },
-        {
-            "name": "Attack Bike"
-        },
+        "Primaris Intercessor",
+        "Eliminator",
+        "Assault Marine",
+        "Attack Bike",
         {
             "name": "Hellblaster",
             "type": "Core",
@@ -32,8 +24,6 @@
             "name": "Aggressor",
             "amount": 2
         },
-        {
-            "name": "Infiltrator Helix Adept"
-        }
+        "Infiltrator Helix Adept"
     ]
 }

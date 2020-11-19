@@ -18,7 +18,7 @@ export interface Warband {
     ScenariosPlayed?: number;
     Philosophy?: string;
     Alignment?: string;
-    Roster: RosterModel[];
+    Roster: Array<RosterModel | string>;
 }
 
 export interface RenderWarband {

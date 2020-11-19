@@ -38,15 +38,9 @@
             "type": "Core",
             "amount": 2
         },
-        {
-            "name": "Eliminator"
-        },
-        {
-            "name": "Ravenwing Biker"
-        },
-        {
-            "name": "Ravenwing Black Knight"
-        },
+        "Eliminator",
+        "Ravenwing Biker",
+        "Ravenwing Black Knight",
         {
             "name": "Hellblaster",
             "amount": 2

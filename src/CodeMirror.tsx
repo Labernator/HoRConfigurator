@@ -48,7 +48,7 @@ export const CodeEditorContainer = ({ code, visible, onSave }: { code: Warband; 
         visible ? <div className="code-mirror-container">
             <img
                 src={isDirty && isViable ? RefreshWarbandIcon : RefreshWarbandDisabledIcon}
-                style={{ width: "50px", height: "50px", left: "975px", cursor: isDirty ? "pointer" : "auto" }}
+                style={{ width: "50px", height: "50px", left: "300px", cursor: isDirty ? "pointer" : "auto" }}
                 className="toolbar-icon"
                 alt="Refresh Warband"
                 onClick={() => isDirty && isViable ? refreshRendering() : (() => undefined)()}
@@ -56,7 +56,7 @@ export const CodeEditorContainer = ({ code, visible, onSave }: { code: Warband; 
             />
             <img
                 src={isViable ? ExportWarbandIcon : ExportWarbandIcon}
-                style={{ width: "50px", height: "50px", left: "1050px" }}
+                style={{ width: "50px", height: "50px", left: "375px" }}
                 className="toolbar-icon"
                 alt="Save JSON file"
                 onClick={() => saveJsonToFile(codeEditorState)}
