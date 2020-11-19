@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5bf28a5a795a3d04b48ac37d4570882d",
+    "revision": "ef8459cc0eec25ec9802a5a17ec4a556",
     "url": "/HoRConfigurator/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HoRConfigurator/static/css/3.2c1131bb.chunk.css"
   },
   {
-    "revision": "0e1a474eb313092d910b",
-    "url": "/HoRConfigurator/static/css/main.8e07f80b.chunk.css"
+    "revision": "c6bab99630cb08b2fe15",
+    "url": "/HoRConfigurator/static/css/main.da80d5a4.chunk.css"
   },
   {
     "revision": "f3677c55b2041d47fa56",
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HoRConfigurator/static/js/4.516599d0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0e1a474eb313092d910b",
-    "url": "/HoRConfigurator/static/js/main.4376d13d.chunk.js"
+    "revision": "c6bab99630cb08b2fe15",
+    "url": "/HoRConfigurator/static/js/main.0790e85e.chunk.js"
   },
   {
     "revision": "c45c806cf9af7f466f06",
