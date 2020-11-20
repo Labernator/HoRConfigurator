@@ -18,12 +18,12 @@ export const LandingPage = () => {
     };
     return (
         <div className="landing-page-container">
-            <div style={{ fontSize: "30px", fontWeight: "bold", position: "absolute", top: 10, left: "150px" }}>Click here to load your warband roster from file</div>
+            <div style={{ fontSize: "26px", fontWeight: "bold", position: "absolute", top: 20, left: "150px" }}>Click here to load your warband roster from file</div>
             <FileUploader image={
                 <img style={{ width: "50px", height: "50px", left: "75px", top: 5 }} alt="OpenWarband" className="toolbar-icon" src={ImportWarbandIcon} title="Open any warband from file" />
             } setStateCallback={setStateAndPath} />
             <div style={{ fontSize: "26px", fontWeight: "bold", float: "left", padding: "10px" }}>Alternatively choose a sample warband from below to view its roster:</div>
-            <div style={{ display: "grid", gridTemplateColumns: "264px 264px 264px", float: "left" }}>
+            <div style={{ float: "left" }}>
                 {state ? <Redirect to={{ pathname, state }} push /> : undefined}
                 <img
                     alt="Dark Angels"

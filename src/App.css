@@ -150,6 +150,14 @@ tr>td:first-child {
   font-size: 12px;
 }
 
+.landing-page-container {
+  height: 29.7cm;
+  margin: 10mm;
+  padding: 10mm;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
 .pdf-container {
   width: 21cm;
   height: 29.7cm;
