@@ -17,7 +17,7 @@ export const LandingPage = () => {
         setPathName("/Warband");
     };
     return (
-        <div className="a4-container">
+        <div className="landing-page-container">
             <div style={{ fontSize: "30px", fontWeight: "bold", position: "absolute", top: 10, left: "150px" }}>Click here to load your warband roster from file</div>
             <FileUploader image={
                 <img style={{ width: "50px", height: "50px", left: "75px", top: 5 }} alt="OpenWarband" className="toolbar-icon" src={ImportWarbandIcon} title="Open any warband from file" />
@@ -27,7 +27,7 @@ export const LandingPage = () => {
                 {state ? <Redirect to={{ pathname, state }} push /> : undefined}
                 <img
                     alt="Dark Angels"
-                    className="landing-page-column-icon"
+                    className="landing-page-icon"
                     src={DarkAngelsCover}
                     onClick={() => {
                         setState((DarkAngelsJson as any).default as Warband);
@@ -35,7 +35,7 @@ export const LandingPage = () => {
                     }} />
                 <img
                     alt="Tau Empire"
-                    className="landing-page-column-icon"
+                    className="landing-page-icon"
                     src={TauEmpireCover}
                     onClick={() => {
                         setState((TauJson as any).default as Warband);
@@ -43,7 +43,7 @@ export const LandingPage = () => {
                     }} />
                 <img
                     alt="Primaris"
-                    className="landing-page-column-icon"
+                    className="landing-page-icon"
                     src={PrimarisCover}
                     onClick={() => {
                         setState((PrimarisJson as any).default as Warband);
@@ -51,7 +51,7 @@ export const LandingPage = () => {
                     }} />
                 <img
                     alt="Adeptus Mechanicus"
-                    className="landing-page-column-icon"
+                    className="landing-page-icon"
                     src={AdeptusMechanicusCover}
                     onClick={() => {
                         setState((AdeptusMechanicus as any).default as Warband);
@@ -59,7 +59,7 @@ export const LandingPage = () => {
                     }} />
                 <img
                     alt="Deathwatch"
-                    className="landing-page-column-icon"
+                    className="landing-page-icon"
                     src={DeathwatchCover}
                     onClick={() => {
                         setState((AdeptusMechanicus as any).default as Warband);
@@ -67,7 +67,7 @@ export const LandingPage = () => {
                     }} />
                 {/* <img
                     alt="Astra Militarum"
-                    className="landing-page-column-icon"
+                    className="landing-page-icon"
                     src={AstraMilitarumCover}
                     onClick={() => {
                         setState((AdeptusMechanicus as any).default as Warband);
@@ -75,7 +75,7 @@ export const LandingPage = () => {
                     }} /> */}
                 <img
                     alt="Adepta Sororitas"
-                    className="landing-page-column-icon"
+                    className="landing-page-icon"
                     src={AdeptaSororitasCover}
                     onClick={() => {
                         setState((AdeptaSororitas as any).default as Warband);

@@ -135,7 +135,7 @@ tr>td:first-child {
   padding: 5px 5px 0px 5px;
 }
 
-.landing-page-column-icon {
+.landing-page-icon {
   width: 264px;
   height: 422px;
   cursor: pointer
@@ -183,8 +183,7 @@ tr>td:first-child {
 .code-mirror-container {
   width: 21cm;
   height: 29.7cm;
-  margin: 10mm 0mm;
-  padding: 10mm;
+  padding: 2mm 10mm 10mm 20mm;
   font-family: sans-serif;
   font-size: 12px;
   float: left;
@@ -214,4 +213,16 @@ tr>td:first-child {
 .hide-container {
   position: absolute;
   top: -10000px;
+}
+
+.error-container {
+  margin-top: 50px;
+  margin-left: 70px;
+  padding: 5px;
+  border: 1px solid #C10206;
+  width: 795px;
+}
+
+.error-container-placeholder {
+  margin-top: 55px;
 }

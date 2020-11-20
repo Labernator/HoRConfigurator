@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CodeEditorContainer } from "../CodeMirror";
 import { FactionEnum, PageMap, RenderModel, Warband } from "../types";
 import { getDetailedRoster, getRosterPrice, getStratagems } from "../utility";
+import { ErrorMessageRenderer } from "../utility/ErrorMessages";
 import { Toolbar } from "../utility/Toolbar";
 import { WarbandRenderer } from "../WarbandRendering/WarbandRenderer";
 
@@ -23,7 +24,7 @@ export const WarbandPage = (path: any) => {
     }, []);
 
     const faction = state.Faction as FactionEnum;
-    const roster = getDetailedRoster(state.Roster, faction, state.Alignment);
+    const roster = getDetailedRoster(state.Roster, faction, state.Alignment).filter((member) => member !== undefined) as RenderModel[];
     const filterRosterToPage = (page: number): RenderModel[] => roster.filter((member) => modelMap.find((entry) => entry.id === `modelsheet-${member.name}-${member.price}` && entry.page === page));
     const getPageCountFromMap = () => modelMap.map((model) => model.page).filter((page, idx, arr) => arr.indexOf(page) === idx).length;
     const renderPages = () => {
@@ -44,6 +45,7 @@ export const WarbandPage = (path: any) => {
     };
     return <div>
         <Toolbar state={state} setState={setState} setEditorVisibility={setEditorVisibility} />
+        <ErrorMessageRenderer />
         {modelMap.length ? <div>{renderPages()}</div > : undefined}
         <WarbandRenderer state={{ ...state, Roster: roster }} page={{ nr: 1, total: 1 }} rosterPrice={getRosterPrice(roster)} stratagems={getStratagems({ ...state, Roster: roster })} fullRender={true} hide={editorVisible} />
         <CodeEditorContainer code={state} visible={editorVisible} onSave={setState} />

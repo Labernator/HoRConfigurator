@@ -7,6 +7,7 @@ import * as EquipmentJson from "../data/Equipment.json";
 import * as RulesJson from "../data/Rules.json";
 // tslint:disable-next-line: max-line-length
 import { ArmySpecificStuff, BasicWeapon, FactionEnum, MetadataModel, MetadataWeapon, MultiProfileRenderWeapon, MultiProfileWeapon, OtherEquipment, Philosophy, RenderModel, RenderWeapon, RosterModel, Rule, SuperBasicWeapon, Warband, WeaponReference } from "../types";
+import { ErrorMessages } from "./ErrorMessages";
 const weapons = EquipmentJson.weapons as MetadataWeapon[];
 const otherEquipment = EquipmentJson.otherEquipment as OtherEquipment[];
 const rules = RulesJson.rules as Rule[];
@@ -19,25 +20,26 @@ export const ensureWeaponExists = (input: MetadataWeapon | MultiProfileWeapon | 
     return input;
 };
 
-export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: FactionEnum, alignment?: string): RenderModel[] => roster.map((rosterModel) => {
+export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: FactionEnum, alignment?: string): Array<RenderModel | undefined> => roster.map((rosterModel) => {
     const modelMetadata = typeof (rosterModel) === "string" ? getModelMetadata(rosterModel, faction) : getModelMetadata(rosterModel.name, faction);
     const harmonizedRosterModel: RosterModel = typeof (rosterModel) === "string" ? { "name": rosterModel } : rosterModel;
     const alignmentPlaceholder = getFactionSpecifics(faction).AlignmentPlaceholder;
     if (!modelMetadata) {
-        throw new Error(`Model ${typeof (rosterModel) === "string" ? rosterModel : rosterModel.name} needs to be added to metadata`);
+        ErrorMessages.getInstance().addErrorMessage(`Model with name '${typeof (rosterModel) === "string" ? rosterModel : rosterModel.name}' does not exist in Metadata`);
+        return undefined;
     }
     let remixedModel = remixModel(modelMetadata, harmonizedRosterModel);
     const ruleStrings = harmonizedRosterModel.rules ? [...modelMetadata.rules || [], ...harmonizedRosterModel.rules].filter((keyword, idx, array) => array.indexOf(keyword) === idx) : modelMetadata.rules || [];
     remixedModel = {
         ...remixedModel,
         keywords: remixedModel.keywords.map((keyword) => keyword === alignmentPlaceholder ? alignment || keyword : keyword),
-        rules: ruleStrings.map((ruleName) => getRule(ruleName, faction, alignment)),
+        rules: ruleStrings.map((ruleName) => getRule(ruleName, faction, alignment)).filter((rule) => rule !== undefined) as Rule[],
     };
     const equipment = modelMetadata.equipment;
     remixedModel = {
         ...remixedModel,
         equipment: equipment ? {
-            weapons: equipment.weapons?.map((weapon) => getWeaponProfile(weapon, faction)),
+            weapons: equipment.weapons?.map((weapon) => getWeaponProfile(weapon, faction)).filter((weapon) => weapon !== undefined) as RenderWeapon[],
             otherEquipment: equipment.otherEquipment?.map(getOtherEquipmentDetails),
         } : undefined,
     };
@@ -63,14 +65,13 @@ export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: 
                     return weapon;
                 }
                 return getWeaponProfile(weapon, faction);
-            }) || [];
+            }).filter((weapon) => weapon !== undefined) as RenderWeapon[] || [];
             otherRosterEquipment = harmonizedRosterModel.equipment.otherEquipment?.map((equi) => {
                 if (typeof (equi) === "string") {
                     return getOtherEquipmentDetails(equi);
                 }
                 return getOtherEquipmentDetails(equi.name);
             });
-            // throw new Error("cant handle weapons brought to the fight yet...");
         }
         remixedModel = {
             ...remixedModel, equipment: {
@@ -128,17 +129,24 @@ export const isBasicWeapon = (weapon: any): weapon is BasicWeapon => typeof (wea
 
 export const isMultiProfileRenderWeapon = (weapon: any): weapon is MultiProfileRenderWeapon => typeof (weapon.price) === "number" && typeof (weapon.amount) === "number" && isMultiProfileWeapon(weapon);
 
-const getWeaponProfile = (weaponRef: string | WeaponReference, faction: FactionEnum): RenderWeapon => {
+const getWeaponProfile = (weaponRef: string | WeaponReference, faction: FactionEnum): RenderWeapon | undefined => {
     if (typeof weaponRef === "string") {
         const weaponDetails = getWeaponDetails(weaponRef);
+        if (!weaponDetails) {
+            ErrorMessages.getInstance().addErrorMessage(`Weapon with name '${weaponRef}' does not exist in Metadata. Specify the full weapon profile instead.`);
+            return undefined;
+        }
         return { ...weaponDetails, price: getWeaponPrice(weaponDetails.name, faction, 1), amount: 1 };
     }
     if (isWeaponReference(weaponRef)) {
         const weaponDetails = getWeaponDetails(weaponRef.name);
+        if (!weaponDetails) {
+            ErrorMessages.getInstance().addErrorMessage(`Weapon with name '${weaponRef.name}' does not exist in Metadata. Specify the full weapon profile instead.`);
+            return undefined;
+        }
         return { ...weaponDetails, price: getWeaponPrice(weaponDetails.name, faction, weaponRef.amount || 1), amount: weaponRef.amount || 1 };
     }
-
-    throw new TypeError("The passed weapon is neither of type string, nor WeaponReference nor RosterWeapon. That should not be...");
+    return undefined;
 };
 
 export const getFactionSpecifics = (faction: FactionEnum): ArmySpecificStuff => {
@@ -153,7 +161,7 @@ export const getFactionSpecifics = (faction: FactionEnum): ArmySpecificStuff => 
     }
 };
 
-export const getWeaponDetails = (name: string) => ensureWeaponExists(weapons.find((weapon) => weapon.name.toLocaleUpperCase() === name.toLocaleUpperCase()), name);
+export const getWeaponDetails = (name: string) => weapons.find((weapon) => weapon.name.toLocaleUpperCase() === name.toLocaleUpperCase());
 export const getWeaponPrice = (weaponName: string, faction: FactionEnum, amount: number) => (getFactionSpecifics(faction).WeaponPriceList.find((weapon) => weapon.name.toLocaleUpperCase() === weaponName.toLocaleUpperCase())?.price || 0) * amount;
 
 export const getOtherEquipmentDetails = (name: string) => otherEquipment.find((equi) => equi.name.toLocaleUpperCase() === name.toLocaleUpperCase()) as OtherEquipment;
@@ -173,10 +181,11 @@ export const getArmyRules = (faction: FactionEnum, alignment?: string) => {
     const alignmentRule = factionSpecifics.Alignments?.find((align) => align.name === alignment);
     return alignmentRule ? [...factionRules, alignmentRule] : factionRules;
 };
-export const getRule = (ruleName: string, faction: FactionEnum, alignment?: string): Rule => {
+export const getRule = (ruleName: string, faction: FactionEnum, alignment?: string): Rule | undefined => {
     let actualRule = rules.find((rule) => rule.name.toLocaleUpperCase() === ruleName.toLocaleUpperCase());
     if (!actualRule) {
-        throw new Error(`Rule ${ruleName} needs to be added to metadata`);
+        ErrorMessages.getInstance().addErrorMessage(`Rule with name '${ruleName}' does not exist in Metadata`);
+        return undefined;
     }
     return actualRule.alignmentParameter && alignment ? actualRule = { ...actualRule, effect: actualRule.effect.replace(getFactionSpecifics(faction).AlignmentPlaceholder || "", alignment) } : actualRule;
 };
@@ -187,7 +196,8 @@ export const getPhilosophy = (name: string, faction: FactionEnum) => {
     if (!phil) {
         phil = getFactionSpecifics(faction).Philosophies.find((philosophy) => philosophy.name.toLocaleUpperCase() === name?.toLocaleUpperCase());
         if (!phil) {
-            throw new Error(`Philosophy ${name} needs to be added to metadata`);
+            ErrorMessages.getInstance().addErrorMessage(`Philosophy with name '${name}' does not exist in Metadata`);
+            return undefined;
         }
     }
     return phil;

@@ -38,7 +38,17 @@
             "type": "Core",
             "amount": 2
         },
-        "Eliminator",
+        {
+            "name": "Assault Marine",
+            "equipment": {
+                "weapons": [
+                    {
+                        "name": "Flamer",
+                        "replacing": "Bolt Pistol"
+                    }
+                ]
+            }
+        },
         "Ravenwing Biker",
         "Ravenwing Black Knight",
         {

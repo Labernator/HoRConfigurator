@@ -45,6 +45,38 @@
                 "price": 15
             },
             {
+                "name": "Flamer",
+                "price": 9
+            },
+            {
+                "name": "Grav-gun",
+                "price": 15
+            },
+            {
+                "name": "Meltagun",
+                "price": 17
+            },
+            {
+                "name": "Lascannon",
+                "price": 25
+            },
+            {
+                "name": "Flamestorm gauntlets",
+                "price": 18
+            },
+            {
+                "name": "Plasma Cannon",
+                "price": 21
+            },
+            {
+                "name": "Plasma Gun",
+                "price": 13
+            },
+            {
+                "name": "Heavy Flamer",
+                "price": 9
+            },
+            {
                 "name": "Bike with Twin Boltgun",
                 "price": 2
             },
@@ -131,6 +163,39 @@
                 ]
             },
             {
+                "name": "Primaris Intercessor",
+                "type": "Core",
+                "price": 18,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 2,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Rifle",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Intercessors",
+                    "Infantry",
+                    "Primaris"
+                ]
+            },
+            {
                 "name": "Eliminator",
                 "type": "Core",
                 "price": 18,
@@ -157,7 +222,7 @@
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
-                    "Dark Angels",
+                    "<CHAPTER>",
                     "Eliminators",
                     "Phobos",
                     "Infantry",
@@ -166,6 +231,147 @@
                 "rules": [
                     "Camo Cloak",
                     "Concealed Position"
+                ]
+            },
+            {
+                "name": "Scout",
+                "type": "Core",
+                "price": 13,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 1,
+                    "Attacks": 1,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Boltgun",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Scout",
+                    "Scout Squad",
+                    "Infantry"
+                ],
+                "rules": [
+                    "Concealed Position"
+                ]
+            },
+            {
+                "name": "Tactical Marine",
+                "type": "Core",
+                "price": 13,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 1,
+                    "Attacks": 1,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Boltgun",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Tactical Squad",
+                    "Infantry"
+                ]
+            },
+            {
+                "name": "Assault Marine",
+                "type": "Core",
+                "price": 13,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 4,
+                    "Wounds": 1,
+                    "Attacks": 1,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Chainsword",
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Assault Squad",
+                    "Infantry"
+                ]
+            },
+            {
+                "name": "Attack Bike",
+                "type": "Core",
+                "price": 35,
+                "stats": {
+                    "Movement": 14,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 4,
+                    "Attacks": 2,
+                    "Leadership": 7,
+                    "Save": "3+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Heavy Bolter",
+                        "Bike with Twin Boltgun",
+                        {
+                            "name": "Bolt Pistol",
+                            "amount": 2
+                        },
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "<CHAPTER>",
+                    "Biker",
+                    "Attack Bike Squad"
+                ],
+                "rules": [
+                    "Jink",
+                    "Turbo-boost"
                 ]
             },
             {
@@ -202,6 +408,43 @@
                 ],
                 "rules": [
                     "Jink",
+                    "Turbo-boost"
+                ]
+            },
+            {
+                "name": "Scout Biker",
+                "type": "Core",
+                "price": 23,
+                "stats": {
+                    "Movement": 16,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 4,
+                    "Toughness": 5,
+                    "Wounds": 2,
+                    "Attacks": 1,
+                    "Leadership": 7,
+                    "Save": "4+",
+                    "InvulnerableSave": "-"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Bike with Twin Boltgun",
+                        "Bolt Pistol",
+                        "Combat Knife",
+                        "Astartes Shotgun",
+                        "Frag Grenades",
+                        "Krag Grenades"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adeptus Astartes",
+                    "Dark Angels",
+                    "Biker",
+                    "Scout Bike Squad"
+                ],
+                "rules": [
                     "Turbo-boost"
                 ]
             },
