@@ -37,6 +37,36 @@
                 "name": "Quick Reaction Force",
                 "tp": 1,
                 "text": "No model on your team may be equipped with Heavy weapons."
+            },
+                        {
+                "name": "The Emperor Protects",
+                "tp": 1,
+                "text": "You may never use a Tactical Re-Roll."
+            },
+            {
+                "name": "For the Primarch!",
+                "tp": 3,
+                "text": "You may only use your own '<CHAPTER>' only Tactical Action."
+            },
+            {
+                "name": "Unseen Warfare",
+                "tp": 1,
+                "text": "Your team contains only models with the 'Scout' and/or 'Phobos' keyword."
+            },
+            {
+                "name": "Heavy Firepower",
+                "tp": 1,
+                "text": "Your team contains only models with the 'Hellblaster' and/or 'Aggressor' keyword."
+            },
+            {
+                "name": "Tactical Insertion",
+                "tp": 2,
+                "text": "Your team contains only models with the 'Fly' keyword and/or are equipped with Grav-chutes."
+            },
+            {
+                "name": "Guilliman's Teachings",
+                "tp": 3,
+                "text": "Your team contains at least seven different models taken from different datasheets without the 'Character' keyword."
             }
         ],
         "WeaponPriceList": [
