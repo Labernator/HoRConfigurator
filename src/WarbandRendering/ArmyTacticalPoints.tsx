@@ -11,7 +11,7 @@ export const ArmyTacticalPointsRenderer = ({ stratagems, philosophy, faction }: 
         }
         return checkboxes;
     };
-    return <div className="quick-ref-enemies-container army-keywords-container">
+    return <div className="model-container army-keywords-container">
         <div className="container-header">
             {`Tactical Points (${tacticalPoints})`}
             {renderCheckboxes()}

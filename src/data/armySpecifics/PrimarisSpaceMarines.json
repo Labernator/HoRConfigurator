@@ -19,6 +19,58 @@
             {
                 "name": "Novamarines",
                 "effect": "Re-roll failed wound rolls of 1 when attacking a model that does not have the IMPERIUM or CHAOS keyword."
+            },
+            {
+                "name": "Red Scorpions",
+                "effect": "Any Tactical Sergeant, Sternguard Sergeant or Primaris Intercessor Sergeant may carry a Narthecium for 15 points. If a Narthecium is taken this way, you cannot take an Apothecary."
+            },
+            {
+                "name": "Raptors",
+                "effect": "In the Shooting phase, this model may choose to treat its bolt weapon as Heavy 1 (decide before firing). If so, any wound roll of 6, is treated as AP -3 and the model does not suffer penalties to its hit rolls unless they are caused by their own weapons. Furthermore, for the first game turn only, gain +2 AS for being in cover, rather than +1."
+            },
+            {
+                "name": "Carcharodons",
+                "effect": "Tactical Marines and Intercessors may exchange their bolter or bolt rifle with a chainsword or warknife or may purchase a chainsword for 1 or a Chainaxe for 2 pts, in addition to their other wargear. Furthermore, enemy models within 1” subtract 1 from their Leadership."
+            },
+            {
+                "name": "Exorcists",
+                "effect": "When chosen as a target of psychic powers the model may attempt to deny it, but must subtract 1 from the roll. Additionally, 'Librarian' models may re-roll the dice to deny the witch. Furthermore, each time this model suffers a Mortal Wound from a psychic power roll a D6. On a 5+ the Mortal Wound is ignored."
+            },
+            {
+                "name": "Howling Griffons",
+                "effect": "May re-roll 1's to hit in the Fight phase if there are more enemy models than friendly models engaged in that close combat. Furthermore, the range of all aura abilities is increased by 3”."
+            },
+            {
+                "name": "Fire Angels",
+                "effect": "Gain a 6+ Invulnerable save. In addition, any 'Fire Angels' model carrying a Chainsword may upgrade it to a Power Sword for 3 points."
+            },
+            {
+                "name": "Mantis Warriors",
+                "effect": "Infantry models without the 'Fly or 'Terminator keywords ignore the negative effects of terrain. Furthermore, when successfully making a Charge from any terrain that would grant it a cover bonus, it gains +1 attack until the end of that turn."
+            },
+            {
+                "name": "Marines Errant",
+                "effect": "May re-roll failed armour saves against weapons that have a random number of shots. The Frag Grenades of this model are Strength 4."
+            },
+            {
+                "name": "Executioners",
+                "effect": "Increase the Damage characteristic by 1 for every wound roll of 6+ in the Fight phase. Furthermore, ignore penalties to the Leadership and the To Hit rolls for melee attacks that are caused by enemy abilites and/or psychic powers."
+            },
+            {
+                "name": "Fire Hawks",
+                "effect": "Add Hand Flamer to the Pistols list. Furthermore, if the model has the 'Fly' keyword and successfully charges, roll a d6. On a 5+, one of the enemy models that was charged suffers a Mortal Wound."
+            },
+            {
+                "name": "Astral Claws",
+                "effect": "If this model advnaced in its last movement phase and is targeted with a shooting attack, the attacker suffers -1 to-hit. Furthermore, ignore Leadership penalties from all sources for your Team Leaders."
+            },
+            {
+                "name": "Greyshields",
+                "effect": "Roll a D6 for each model in your team: on a 5+ that model gains an extra Wound for this game. Add 1 to the result for your Team Leader."
+            },
+            {
+                "name": "Iron Snakes",
+                "effect": "Models wit the 'Tactical Squad', 'Assault Squad' or 'Intercessor keyword add +1 to-hit if the enemy outnumbers the friendly models involved in that close combat. Furthermore, models with the 'Apothecary' keyword add +1 to the roll when trying to revive a model."
             }
         ],
         "AlignmentPlaceholder": "<CHAPTER>",
@@ -38,7 +90,7 @@
                 "tp": 1,
                 "text": "No model on your team may be equipped with Heavy weapons."
             },
-                        {
+            {
                 "name": "The Emperor Protects",
                 "tp": 1,
                 "text": "You may never use a Tactical Re-Roll."
@@ -434,15 +486,25 @@
                     "Save": "3+",
                     "InvulnerableSave": "-"
                 },
+                "equipment": {
+                    "weapons": [
+                        "Bolt Pistol",
+                        "Frag Grenades",
+                        "Krag Grenades",
+                        "Marksman Bolt Carbine"
+                    ]
+                },
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
                     "<CHAPTER>",
-                    "Intercessors",
+                    "Infiltrators",
                     "Infantry",
-                    "Primaris"
+                    "Primaris",
+                    "Phobos"
                 ],
                 "rules": [
+                    "Smoke Grenade",
                     "Omni-scrambler",
                     "Concealed Position"
                 ]

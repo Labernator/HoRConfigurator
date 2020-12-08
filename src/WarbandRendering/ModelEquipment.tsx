@@ -1,10 +1,15 @@
 import React from "react";
 import { LegendaryIcon } from "../images";
-import { BasicWeapon, FactionEnum, MultiProfileWeapon, OtherEquipment, RenderEquipment, RenderWeapon, Rule, SuperBasicWeapon } from "../types";
-import { getWeaponPrice, isBasicWeapon, isMultiProfileRenderWeapon, isMultiProfileWeapon } from "../utility/Utils";
+import { BasicWeapon, FactionEnum, LegendaryWeapon, MultiProfileWeapon, OtherEquipment, RenderEquipment, RenderWeapon, Rule, SuperBasicWeapon } from "../types";
+import { getWeaponPrice, isBasicWeapon, isLegendaryWeapon, isMultiProfileRenderWeapon, isMultiProfileWeapon } from "../utility/Utils";
 
-export const ModelEquipmentRenderer = ({ equipment, faction, name }: { equipment: RenderEquipment; faction: FactionEnum; name: string }) => {
-    const weaponPriceString = (weapon: RenderWeapon) => getWeaponPrice(weapon.name, faction, weapon.amount || 1) ? `(${getWeaponPrice(weapon.name, faction, weapon.amount || 1)})` : weapon.isLegendary ? "(20)" : "";
+export const ModelEquipmentRenderer = ({ equipment, faction, name }: { equipment: RenderEquipment; faction: string; name: string }) => {
+    const weaponPriceString = (weapon: RenderWeapon | LegendaryWeapon) =>
+        isLegendaryWeapon(weapon) ?
+            "(20)" :
+            getWeaponPrice(weapon.name, faction as FactionEnum, weapon.amount || 1) ?
+                `(${getWeaponPrice(weapon.name, faction as FactionEnum, weapon.amount || 1)})` :
+                "";
     const otherEquipmentPriceString = (otherEquipment: OtherEquipment) => otherEquipment.price ? `(${otherEquipment.price})` : "";
     const weaponRuleRender = (weapon: BasicWeapon | SuperBasicWeapon) => {
         if (typeof (weapon.rule) === "string" || weapon.rule === undefined) {
@@ -41,7 +46,7 @@ export const ModelEquipmentRenderer = ({ equipment, faction, name }: { equipment
         let arr: JSX.Element[] = [];
         const weaponName = cnt === 1 ? ` - ${weapon.name}` : cnt === 2 ? ` -  - ${weapon.name}` : weapon.name;
         const amountString = (isBasicWeapon(weapon) || isMultiProfileRenderWeapon(weapon)) && weapon.amount > 1 && cnt === 0 ? `${weapon.amount}x` : "";
-        const headerString = (isBasicWeapon(weapon) || isMultiProfileRenderWeapon(weapon)) ? `${amountString} ${weaponName} ${weaponPriceString(weapon)}` : weaponName;
+        const headerString = (isBasicWeapon(weapon) || isMultiProfileRenderWeapon(weapon) || isLegendaryWeapon(weapon)) ? `${amountString} ${weaponName} ${weaponPriceString(weapon)}` : weaponName;
         if (isMultiProfileWeapon(weapon) || isMultiProfileRenderWeapon(weapon)) {
             arr = [
                 ...arr,
@@ -67,7 +72,7 @@ export const ModelEquipmentRenderer = ({ equipment, faction, name }: { equipment
             <td>{otherEquipment.effect}</td>
         </tr>);
     return <div>
-        <table className="enemies-table">
+        <table className="model-table">
             <colgroup>
                 <col style={{ width: "100px" }} />
                 <col style={{ width: "45px" }} />
@@ -92,7 +97,7 @@ export const ModelEquipmentRenderer = ({ equipment, faction, name }: { equipment
                 {equipment.weapons?.map((weapon) => renderWeapon(weapon, 0))}
             </tbody>
         </table>
-        {equipment.otherEquipment ? <table className="enemies-table">
+        {equipment.otherEquipment ? <table className="model-table">
             <colgroup>
                 <col style={{ width: "100px" }} />
                 <col style={{ width: "307px" }} />

@@ -5,6 +5,32 @@
             "Adepta Sororitas",
             "<ORDER>"
         ],
+        "Alignments": [
+            {
+                "name": "Order of the Valorous Heart",
+                "effect": "When losing a wound, roll one D6; on a 6 that wound is not lost. In addition, treat any -1 AP of an attack against this model as AP 0 instead. Whilst this model is under the effect of an Imagifier’s Tale of the Stoic ability, also treat attacks with -2 AP as AP 0."
+            },
+            {
+                "name": "Order of our Martyred Lady",
+                "effect": "Gain one Miracle dice at the end of any phase (other than the Morale phase) in which any models with this conviction were destroyed. This is in addition to any Miracle dice gained in this phase."
+            },
+            {
+                "name": "Order of the Bloody Rose",
+                "effect": "When resolving an attack made with a melee weapon or a Pistol weapon, that weapon’s AP is improved by 1 for that attack. In addition, gain +1 Attack during any turn in which you made a charge move, were charged or performed a Heroic Intervention."
+            },
+            {
+                "name": "Order of the Ebon Chalice",
+                "effect": "When this model loses a mortal wound, roll one D6; on a 5+ that wound is not lost. In addition, when you perform an Act of Faith, you can first discard one Miracle dice. If you do, one Miracle dice you use is considered to be a 6."
+            },
+            {
+                "name": "Order of the Argent Shroud",
+                "effect": "When this model Advances, it can fire ranged weapons as if it had not Advanced."
+            },
+            {
+                "name": "Order of the Sacred Rose",
+                "effect": "After you perform an Act of Faith for this model, roll one D6; on a 5+ you gain one Miracle dice. In addition, when firing Overwatch, hit on a roll of 5+."
+            }
+        ],
         "AlignmentPlaceholder": "<ORDER>",
         "ModelAllowance": {
             "Core": 20,
@@ -16,6 +42,41 @@
                 "name": "World on Fire",
                 "tp": 2,
                 "text": "Every model that can take a flame weapon has a flame weapon (flamer, combi-flamer, hand flamer, heavy flamer and the Widowmaker are flame weapons)."
+            },
+            {
+                "name": "A Military Matter",
+                "tp": 1,
+                "text": "Your kill team consists entirely of 'Adepta Sororitas' models."
+            },
+            {
+                "name": "An Ecumenical Matter ",
+                "tp": 3,
+                "text": "Your kill team consists entirely of 'Adeptus Ministorum' Models."
+            },
+            {
+                "name": "Burn the Heretic",
+                "tp": 0,
+                "text": "Gain one additional Tactical Point for every three models killed by your kill team with the CHAOS keyword."
+            },
+            {
+                "name": "Boots on the ground ",
+                "tp": 2,
+                "text": "Your kill team contains no models with the fly keyword."
+            },
+            {
+                "name": "Asceticism",
+                "tp": 2,
+                "text": "No one on your kill team takes any items from the armoury."
+            },
+            {
+                "name": "Pious Practice",
+                "tp": 3,
+                "text": "You may only use your own <ORDER> only Tactical Action."
+            },
+            {
+                "name": "Miracle Conduit",
+                "tp": 0,
+                "text": "While your Leader is alive, whenever you generate a Miracle Dice, you may roll 2D6 and discard the result one. Reduce the 'Destined for Greatness' bonus by 1."
             }
         ],
         "WeaponPriceList": [
@@ -208,6 +269,43 @@
                 "rules": [
                     "Zealot",
                     "Spiritual Fortitude"
+                ]
+            },
+            {
+                "name": "Sister Repentia",
+                "type": "Core",
+                "price": 13,
+                "stats": {
+                    "Movement": 6,
+                    "WeaponSkill": "3+",
+                    "BallisticSkill": "3+",
+                    "Strength": 3,
+                    "Toughness": 3,
+                    "Wounds": 1,
+                    "Attacks": 2,
+                    "Leadership": 8,
+                    "Save": "7+",
+                    "InvulnerableSave": "6+"
+                },
+                "equipment": {
+                    "weapons": [
+                        "Penitent Eviscerator"
+                    ]
+                },
+                "keywords": [
+                    "Imperium",
+                    "Adepta Sororitas",
+                    "<ORDER>",
+                    "Infantry",
+                    "Sister Repentia"
+                ],
+                "rules": [
+                    "Acts of Faith",
+                    "Sacred Rites",
+                    "Shield of Faith",
+                    "Zealot",
+                    "Martyrdom",
+                    "Solace in Anguish"
                 ]
             },
             {

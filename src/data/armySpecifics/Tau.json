@@ -13,6 +13,26 @@
             {
                 "name": "Sa’cea",
                 "effect": "Add 1 to the Leadership characteristic of models with this tenet. These models may re-roll a a single failed hit roll in the Shooting phase (max. 5 different models per turn)."
+            },
+            {
+                "name": "T'au",
+                "effect": "When firing Overwatch and within 6” of a friendly <SEPT> model, hit on a roll of 5+ irrespective of the firing model’s Ballistic Skill or any modifiers."
+            },
+            {
+                "name": "Vior'La",
+                "effect": "Treat all Rapid Fire weapons as Assault weapons when advancing. In addition,  do not suffer the to-hit penalty for Advancing and firing Assault weapons."
+            },
+            {
+                "name": "Bork'an",
+                "effect": "Add 6” to the maximum Range of any Rapid Fire and Heavy weapons."
+            },
+            {
+                "name": "Dal'Yth",
+                "effect": "If this model does not Manta Strike, move, Fall Back, charge, pile in or consolidate in its turn, it may claim the benefit of cover in the opponent's subsequent turn, even while in the open."
+            },
+            {
+                "name": "Farsight Enclaves",
+                "effect": "Re-roll wound rolls of 1 for shooting attacks against enemy units that are within 6” of the firing model."
             }
         ],
         "AlignmentPlaceholder": "<SEPT>",
@@ -104,8 +124,8 @@
                 "name": "Crisis Shas'vre",
                 "type": "Leader",
                 "price": 34,
-                "stats": [
-                    {
+                "stats": {
+                    "firstProfile": {
                         "Movement": 8,
                         "WeaponSkill": "5+",
                         "BallisticSkill": "4+",
@@ -117,7 +137,7 @@
                         "Save": "3+",
                         "InvulnerableSave": "-"
                     },
-                    {
+                    "secondProfile": {
                         "Movement": 5,
                         "WeaponSkill": "5+",
                         "BallisticSkill": "4+",
@@ -129,7 +149,7 @@
                         "Save": "3+",
                         "InvulnerableSave": "-"
                     }
-                ],
+                },
                 "equipment": {
                     "weapons": [
                         "Burst Cannon"
@@ -252,8 +272,8 @@
                 "name": "Broadside Shas'ui",
                 "type": "Special",
                 "price": 35,
-                "stats": [
-                    {
+                "stats": {
+                    "firstProfile": {
                         "Movement": 5,
                         "WeaponSkill": "5+",
                         "BallisticSkill": "4+",
@@ -265,7 +285,7 @@
                         "Save": "2+",
                         "InvulnerableSave": "-"
                     },
-                    {
+                    "secondProfile": {
                         "Movement": 5,
                         "WeaponSkill": "6+",
                         "BallisticSkill": "4+",
@@ -277,7 +297,7 @@
                         "Save": "2+",
                         "InvulnerableSave": "-"
                     }
-                ],
+                },
                 "equipment": {
                     "weapons": [
                         "Heavy Rail Rifle"

@@ -118,11 +118,19 @@
             "price": 3
         },
         {
+            "name": "Omni-scrambler",
+            "effect": "Enemy models that are set up as reinforcements cannot be set up within 12” of this model"
+        },
+        {
             "name": "Concealed Position",
             "effect": "During deployment, you can set up this model anywhere that is more than 9” away from any enemy models and the enemy deployment zone."
         },
         {
             "name": "Sky Strike",
+            "effect": "During deployment, you can hold this model back. At the end of one of your Movement phases you can set up this unit anywhere that is more than 9” away from any enemy models."
+        },
+        {
+            "name": "Jump Pack Assault",
             "effect": "During deployment, you can hold this model back. At the end of one of your Movement phases you can set up this unit anywhere that is more than 9” away from any enemy models."
         },
         {
@@ -162,15 +170,34 @@
             "effect": "When this model would lose a wound as a result of a mortal wound in the Psychic phase, roll a D6; on a 5+ that wound is not lost."
         },
         {
-            "name": "Jump Pack Assault",
-            "effect": "During deployment, you can hold this model back. At the end of one of your Movement phases you can set up this unit anywhere that is more than 9” away from any enemy models."
+            "name": "Martyrdom",
+            "effect": "When this model is destroyed (except in the Morale phase), gain one Miracle dice."
+        },
+        {
+            "name": "Solace in Anguish",
+            "effect": "When this model would lose a wound, roll a D6; on a 5+ that wound is not lost."
         }
     ],
     "Philosophies": [
         {
             "name": "One Track Mind",
             "tp": 1,
-            "text": "Before the game, you choose a single Tactical Action available to you. You may only use that Tactical Action in the game. You may choose different Tactical Actions for each game"
+            "text": "Before the game, you choose a single Tactical Action available to you. You may only use that Tactical Action in the game. You may choose different Tactical Actions for each game."
+        },
+        {
+            "name": "Keep Them Guessing",
+            "tp": 2,
+            "text": "You may not use any Tactical Action more than once per game."
+        },
+        {
+            "name": "Bloodthirsty",
+            "tp": 0,
+            "text": "Gain 1 TP if a model from your team caused the first casualty of the game (2 TP if your Leader did the Kill)."
+        },
+        {
+            "name": "Raider",
+            "tp": 0,
+            "text": "Gain 1 TP when one of your models enters the enemy deployment zone."
         }
     ]
 }

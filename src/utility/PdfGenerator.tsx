@@ -1,11 +1,12 @@
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import React from "react";
+import { store } from "..";
 import { SavePdfIcon } from "../images";
-export const PdfGenerator = ({ title }: { title: string }) => {
+export const PdfGenerator = () => {
 
     const exportPdf = async () => {
-        const jsPdf = new jsPDF("p", "mm", "a4");
+        const jsPdf = new jsPDF("p", "mm", "a4", true);
         let canvas: HTMLCanvasElement;
         const container = Array.from(document.querySelectorAll(".pdf-container"));
         for (let i = 0; i < container.length; i++) {
@@ -17,7 +18,7 @@ export const PdfGenerator = ({ title }: { title: string }) => {
             jsPdf.addImage(canvas.toDataURL("image/png"), "JPEG", 0, 0, jsPdf.internal.pageSize.getWidth(), jsPdf.internal.pageSize.getHeight());
 
         }
-        jsPdf.save(`${title}.pdf`);
+        jsPdf.save(`${store.getState().Title}.pdf`);
     };
 
     return <div id="pdf-generator" className="pdf-generator">

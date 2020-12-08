@@ -4,15 +4,6 @@
   color: #1E1E1E;
 }
 
-.toolbar-icon {
-  padding: 7px;
-  position: absolute;
-  top: 0px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-
 table {
   font-size: 14px;
   -webkit-border-horizontal-spacing: 30px;
@@ -44,54 +35,6 @@ tr>td:first-child {
   font-style: italic;
 }
 
-.quick-ref-table-container {
-  grid-column: 1;
-  border-right: 1px solid;
-  height: 370px;
-  text-align: left;
-}
-
-.quick-ref-ul {
-  float: left;
-  font-weight: bold;
-  padding-right: 5px;
-}
-
-.quick-ref-enemies-container {
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: 2px solid #1E1E1E;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.enemies-table {
-  width: 780px;
-  text-align: left;
-  table-layout: fixed;
-  font-size: 12px;
-  -webkit-border-horizontal-spacing: 15px;
-  -webkit-border-vertical-spacing: 5px;
-}
-
-.enemies-table>* {
-  vertical-align: top;
-  font-size: 12px;
-}
-
-.enemies-table>caption {
-  font-size: 15px;
-  padding-left: 15px;
-}
-
-.enemy-type {
-  position: absolute;
-  left: 800px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
 .container-header {
   float: left;
   font-size: 13px;
@@ -99,40 +42,6 @@ tr>td:first-child {
   padding: 5px 0px 5px 5px;
   width: calc(100% - 4px);
   background: darkgrey;
-}
-
-.split-div {
-  float: left;
-  clear: both;
-  display: grid;
-  padding: 5px;
-  grid-template-columns: 185px auto;
-  width: 100%;
-  text-align: left
-}
-
-.split-div-header {
-  font-weight: bold;
-  grid-column: 1;
-}
-
-.split-div-text {
-  grid-column: 2;
-}
-
-.keywords-container {
-  float: left;
-  clear: both;
-  padding: 5px;
-  background: lightgrey;
-  width: calc(100% - 10px);
-  border-top: 1px solid #1E1E1E;
-}
-
-.keywords-text {
-  clear: both;
-  text-align: left;
-  padding: 5px 5px 0px 5px;
 }
 
 .landing-page-icon {
@@ -152,10 +61,9 @@ tr>td:first-child {
 
 .landing-page-container {
   height: 29.7cm;
-  margin: 10mm;
-  padding: 10mm;
   font-family: sans-serif;
   font-size: 12px;
+  padding-left: 5px;
 }
 
 .pdf-container {
@@ -195,17 +103,21 @@ tr>td:first-child {
   font-family: sans-serif;
   font-size: 12px;
   float: left;
+  clear: both;
 }
 
 .code-mirror-title {
   font-weight: bold;
   font-size: 25px;
   padding-bottom: 5px;
+  float: left;
+  padding-top: 15px;
 }
 
 .code-mirror-editor {
   width: 21cm;
   height: 29.7cm;
+  clear: both;
 }
 
 .CodeMirror {
@@ -224,13 +136,8 @@ tr>td:first-child {
 }
 
 .error-container {
-  margin-top: 50px;
   margin-left: 70px;
   padding: 5px;
   border: 1px solid #C10206;
   width: 795px;
-}
-
-.error-container-placeholder {
-  margin-top: 55px;
 }

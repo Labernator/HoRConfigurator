@@ -25,12 +25,41 @@
                 "name": "Unwavering Zeal",
                 "tp": 2,
                 "text": "If you are the first player to fail a Morale test including Nerve test, you lose 2 TP."
+            },
+            {
+                "name": "The Emperor Protects",
+                "tp": 1,
+                "text": "You may never use a Tactical Re-Roll."
+            },
+            {
+                "name": "Redemption Force",
+                "tp": 1,
+                "text": "Your team contains only models with the 'Deathwing' keyword."
+            },
+            {
+                "name": "Wings of the Angel",
+                "tp": 2,
+                "text": "Your team contains at least one model with 'Ravenwing', at least one with 'Deathwing' keyword and at least 5 models with 'Scout Squad', 'Tacticatl Squad' or 'Assault Squad' keywords."
+            },
+            {
+                "name": "The Blessed Founding",
+                "tp": 1,
+                "text": "Your team contains only models with the 'Primaris' keyword."
+            },
+            {
+                "name": "Ravenwing Attack Squadron",
+                "tp": 1,
+                "text": "Your team contains only models with the 'Ravenwing' keyword."
             }
         ],
         "WeaponPriceList": [
             {
                 "name": "Heavy Bolter",
                 "price": 10
+            },
+            {
+                "name": "Missile Launcher",
+                "price": 25
             },
             {
                 "name": "Auto Boltstorm Gauntlets",
@@ -55,6 +84,10 @@
             {
                 "name": "Meltagun",
                 "price": 17
+            },
+            {
+                "name": "Mulit-Melta",
+                "price": 27
             },
             {
                 "name": "Lascannon",
@@ -189,7 +222,6 @@
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
-                    "<CHAPTER>",
                     "Intercessors",
                     "Infantry",
                     "Primaris"
@@ -222,7 +254,6 @@
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
-                    "<CHAPTER>",
                     "Eliminators",
                     "Phobos",
                     "Infantry",
@@ -236,7 +267,7 @@
             {
                 "name": "Scout",
                 "type": "Core",
-                "price": 13,
+                "price": 11,
                 "stats": {
                     "Movement": 6,
                     "WeaponSkill": "3+",
@@ -260,7 +291,6 @@
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
-                    "<CHAPTER>",
                     "Scout",
                     "Scout Squad",
                     "Infantry"
@@ -296,7 +326,6 @@
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
-                    "<CHAPTER>",
                     "Tactical Squad",
                     "Infantry"
                 ]
@@ -328,7 +357,6 @@
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
-                    "<CHAPTER>",
                     "Assault Squad",
                     "Infantry"
                 ]
@@ -365,7 +393,6 @@
                 "keywords": [
                     "Imperium",
                     "Adeptus Astartes",
-                    "<CHAPTER>",
                     "Biker",
                     "Attack Bike Squad"
                 ],

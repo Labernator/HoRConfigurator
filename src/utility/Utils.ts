@@ -6,7 +6,7 @@ import * as TauArmySpecifics from "../data/armySpecifics/Tau.json";
 import * as EquipmentJson from "../data/Equipment.json";
 import * as RulesJson from "../data/Rules.json";
 // tslint:disable-next-line: max-line-length
-import { ArmySpecificStuff, BasicWeapon, FactionEnum, MetadataModel, MetadataWeapon, MultiProfileRenderWeapon, MultiProfileWeapon, OtherEquipment, Philosophy, RenderModel, RenderWeapon, RosterModel, Rule, SuperBasicWeapon, Warband, WeaponReference } from "../types";
+import { ArmySpecificStuff, BasicWeapon, FactionEnum, LegendaryWeapon, MetadataModel, MetadataWeapon, ModelType, MultiProfileModelStats, MultiProfileRenderWeapon, MultiProfileWeapon, OtherEquipment, Philosophy, RecursivePartial, RenderModel, RenderWeapon, ReplacableString, RosterModel, Rule, SuperBasicWeapon, Warband, WeaponReference } from "../types";
 import { ErrorMessages } from "./ErrorMessages";
 const weapons = EquipmentJson.weapons as MetadataWeapon[];
 const otherEquipment = EquipmentJson.otherEquipment as OtherEquipment[];
@@ -19,8 +19,11 @@ export const ensureWeaponExists = (input: MetadataWeapon | MultiProfileWeapon | 
     }
     return input;
 };
-
-export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: FactionEnum, alignment?: string): Array<RenderModel | undefined> => roster.map((rosterModel) => {
+export const isMultiProfileStatLine = (statLine: any): statLine is MultiProfileModelStats => statLine.firstProfile !== undefined && statLine.secondProfile !== undefined;
+export const isPartialMultiProfileStatLine = (statLine: any): statLine is RecursivePartial<MultiProfileModelStats> => statLine.firstProfile !== undefined || statLine.secondProfile !== undefined;
+export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: string, alignment?: string): Array<RenderModel | undefined> => roster.map((rosterModel) => getDetailedModel(rosterModel, faction, alignment));
+export const getDetailedModel = (rosterModel: string | RosterModel, factionString: string, alignment?: string): RenderModel | undefined => {
+    const faction = factionString as FactionEnum;
     const modelMetadata = typeof (rosterModel) === "string" ? getModelMetadata(rosterModel, faction) : getModelMetadata(rosterModel.name, faction);
     const harmonizedRosterModel: RosterModel = typeof (rosterModel) === "string" ? { "name": rosterModel } : rosterModel;
     const alignmentPlaceholder = getFactionSpecifics(faction).AlignmentPlaceholder;
@@ -96,21 +99,24 @@ export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: 
         price: getTotalUnitPrice(remixedModel, faction),
     };
     return remixedModel;
-});
+};
 const getModelMetadata = (name: string, faction: FactionEnum) => getFactionSpecifics(faction).UnitList.find((unit) => unit.name.toLocaleUpperCase() === name.toLocaleUpperCase());
 const remixModel = (metaDataModel: MetadataModel, rosterModel: RosterModel): RenderModel => {
-
+    const replacedKeywords = (rosterModel.keywords?.filter((key) => typeof (key) !== "string") as ReplacableString[])?.map((key) => key.replacing);
     const resultModel: RenderModel = {
         name: rosterModel.name,
         type: rosterModel.type || metaDataModel.type,
         amount: rosterModel.amount,
-        // price: metaDataModel.price * (rosterModel.amount || 1),
         price: metaDataModel.price,
-        keywords: rosterModel.keywords ? [...metaDataModel.keywords, ...rosterModel.keywords].filter((keyword, idx, array) => array.indexOf(keyword) === idx) : metaDataModel.keywords,
+        keywords: rosterModel.keywords ? [...metaDataModel.keywords, ...rosterModel.keywords.map((key) => typeof (key) !== "string" ? key.name : key)].filter((keyword) => !replacedKeywords.includes(keyword)) : metaDataModel.keywords,
         rules: [],
-        stats: Array.isArray(metaDataModel.stats) && Array.isArray(rosterModel.stats) ?
-            (rosterModel.stats ? [...metaDataModel.stats, ...rosterModel.stats] : metaDataModel.stats) :
-            rosterModel.stats ? { ...metaDataModel.stats, ...rosterModel.stats } : metaDataModel.stats,
+        stats: isMultiProfileStatLine(metaDataModel.stats) ?
+            (rosterModel.stats && isPartialMultiProfileStatLine(rosterModel.stats) ?
+                { ...metaDataModel.stats, firstProfile: { ...metaDataModel.stats.firstProfile, ...rosterModel.stats.firstProfile }, secondProfile: { ...metaDataModel.stats.secondProfile, ...rosterModel.stats.secondProfile } } :
+                metaDataModel.stats) :
+            rosterModel.stats ?
+                { ...metaDataModel.stats, ...rosterModel.stats } :
+                metaDataModel.stats,
     };
     return resultModel;
 };
@@ -126,7 +132,7 @@ export const isSuperBasicWeapon = (weapon: any): weapon is SuperBasicWeapon =>
     weapon.damage && (typeof (weapon.damage) === "string" || typeof (weapon.damage) === "number") &&
     (typeof (weapon.ap) === "string" || typeof (weapon.ap) === "number");
 export const isBasicWeapon = (weapon: any): weapon is BasicWeapon => typeof (weapon.price) === "number" && typeof (weapon.amount) === "number" && isSuperBasicWeapon(weapon);
-
+export const isLegendaryWeapon = (weapon: any): weapon is LegendaryWeapon => typeof (weapon.isLegendary) === "boolean" && isSuperBasicWeapon(weapon);
 export const isMultiProfileRenderWeapon = (weapon: any): weapon is MultiProfileRenderWeapon => typeof (weapon.price) === "number" && typeof (weapon.amount) === "number" && isMultiProfileWeapon(weapon);
 
 const getWeaponProfile = (weaponRef: string | WeaponReference, faction: FactionEnum): RenderWeapon | undefined => {
@@ -149,8 +155,8 @@ const getWeaponProfile = (weaponRef: string | WeaponReference, faction: FactionE
     return undefined;
 };
 
-export const getFactionSpecifics = (faction: FactionEnum): ArmySpecificStuff => {
-    switch (faction) {
+export const getFactionSpecifics = (faction: string): ArmySpecificStuff => {
+    switch (faction as FactionEnum) {
         case FactionEnum.AdeptaSororitas: return AdeptaSororitasArmySpecific.AdeptaSororitas;
         case FactionEnum.AdeptusMechanicus: return AdeptusMechanicusArmySpecific.AdeptusMechanicus;
         case FactionEnum.DarkAngels: return DarkAngelsArmySpecific.DarkAngels;
@@ -179,7 +185,8 @@ export const getArmyRules = (faction: FactionEnum, alignment?: string) => {
     const factionSpecifics = getFactionSpecifics(faction);
     const factionRules = factionSpecifics.ArmyRules || [];
     const alignmentRule = factionSpecifics.Alignments?.find((align) => align.name === alignment);
-    return alignmentRule ? [...factionRules, alignmentRule] : factionRules;
+    const armyRules = alignmentRule ? [...factionRules, alignmentRule] : factionRules;
+    return armyRules.map((rule) => (alignment ? { ...rule, effect: rule.effect.replace(getFactionSpecifics(faction).AlignmentPlaceholder || "", alignment) } : rule));
 };
 export const getRule = (ruleName: string, faction: FactionEnum, alignment?: string): Rule | undefined => {
     let actualRule = rules.find((rule) => rule.name.toLocaleUpperCase() === ruleName.toLocaleUpperCase());
@@ -206,10 +213,24 @@ export const getPhilosophy = (name: string, faction: FactionEnum) => {
 export const isWarband = (json: any): json is Warband => {
     const titleExistsAndIsString = json.Title && typeof json.Title === "string";
     const factionExistsAndIsString = json.Faction && typeof json.Faction === "string";
-    const scenarioExistsAndIsNumber = json.ScenariosPlayed && typeof json.ScenariosPlayed === "number";
-    return titleExistsAndIsString && factionExistsAndIsString && scenarioExistsAndIsNumber;
-    // Philosophy?: string;
-    // Alignment?: string;
+    const scenarioExistsAndIsNumber = !json.ScenariosPlayed || (json.ScenariosPlayed && typeof json.ScenariosPlayed === "number");
+    const philosophiesOk = !json.Philosophy || (json.Philosophy && typeof json.Philosophy === "string");
+    const alignmentsOk = !json.Alignment || (json.Alignment && typeof json.Alignment === "string");
+    return titleExistsAndIsString && factionExistsAndIsString && scenarioExistsAndIsNumber && philosophiesOk && alignmentsOk;
+
     // Roster: Model[];
-    // ArmyRules?: string[];
+};
+
+export const getPossiblePhilosophies = (faction: FactionEnum | undefined): Philosophy[] => {
+    if (!faction) {
+        return [];
+    }
+    return [...philosophies, ...getFactionSpecifics(faction).Philosophies];
+};
+
+export const countType = (members: RenderModel[], type: ModelType) => members.filter((member) => member.type === type).reduce((acc, member) => acc + (member.amount ? member.amount : 1), 0);
+
+export const isSearchedModel = (rosterModel: string | RosterModel, renderModel: RenderModel, faction: string, alignment?: string) => {
+    const detailedModel = getDetailedModel(rosterModel, faction, alignment);
+    return detailedModel?.name === renderModel.name && detailedModel?.price === renderModel.price;
 };

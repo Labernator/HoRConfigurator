@@ -24,7 +24,42 @@
             {
                 "name": "A More Subtle Touch",
                 "tp": 2,
-                "text": "Your team contains no models with the SKITARII keyword."
+                "text": "Your team contains no models with the 'Skitarii' keyword."
+            },
+            {
+                "name": "The Omnissiah Knows Best",
+                "tp": 1,
+                "text": "You must always roll for the current Canticle of the Omnissiah. You may not choose it."
+            },
+            {
+                "name": "Foot Soldiers of the Machine God",
+                "tp": 1,
+                "text": "Your kill team does not contain units with the 'Vehicle' keyword or the 'Infiltration' ability."
+            },
+            {
+                "name": "Blanche Mechanicum",
+                "tp": 2,
+                "text": "Your kill team contains no two units from the same data sheet (Tech-Priest Auctoris can be taken multiple times, as long as they are from different disciplines)."
+            },
+            {
+                "name": "Skitarii Honors",
+                "tp": 2,
+                "text": "Aside from your team leader, your kill team consists entirely of Skitarii units."
+            },
+            {
+                "name": "Cost-Effective Operation",
+                "tp": 2,
+                "text": "Your Kill Team spends no more than 20% of its points on model options, weapon swaps, armory items, and/or mechadendrites."
+            },
+            {
+                "name": "Noospheric Relay",
+                "tp": 3,
+                "text": "Actions which require Tactical Points must affect models within 12” of your team leader"
+            },
+            {
+                "name": "Collegia Mechanicus",
+                "tp": 3,
+                "text": "Your kill team contains more Tech-Priest units than non-Tech-Priest units."
             }
         ],
         "WeaponPriceList": [

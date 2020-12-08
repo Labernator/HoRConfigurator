@@ -5,7 +5,13 @@ export enum FactionEnum {
     AdeptusMechanicus = "Adeptus Mechanicus",
     AdeptaSororitas = "Adepta Sororitas",
     Deathwatch = "Deathwatch",
-    AstraMilitarum = "Astra Militarum",
+    // AstraMilitarum = "Astra Militarum",
+}
+
+export enum ModelType {
+    Core = "Core",
+    Special = "Special",
+    Leader = "Leader",
 }
 
 export type RosterWeapon = RenderWeapon;
@@ -28,6 +34,8 @@ export interface RenderWarband {
     Philosophy?: string;
     Alignment?: string;
     Roster: RenderModel[];
+    RosterPrice: number;
+    Stratagems: TacticalPoints[];
 }
 
 export interface ModelStats {
@@ -41,6 +49,11 @@ export interface ModelStats {
     Leadership: number;
     Save: string;
     InvulnerableSave: string;
+}
+
+export interface MultiProfileModelStats {
+    firstProfile: ModelStats;
+    secondProfile: ModelStats;
 }
 
 export interface WeaponReference {
@@ -108,14 +121,14 @@ export interface PageMap {
 export interface UnifiedModel {
     name: string;
     type?: string;
-    stats?: ModelStats | ModelStats[];
-    keywords?: string[];
 }
 
 export interface RosterModel extends UnifiedModel {
+    stats?: Partial<ModelStats> | RecursivePartial<MultiProfileModelStats>;
     amount?: number;
     equipment?: RosterEquipment;
     rules?: string[];
+    keywords?: Array<string | ReplacableString>;
 }
 export interface RosterEquipment {
     weapons?: Array<RosterWeaponReference | RenderWeapon | string>;
@@ -124,7 +137,7 @@ export interface RosterEquipment {
 export interface MetadataModel extends UnifiedModel {
     price: number;
     type: string;
-    stats: ModelStats | ModelStats[];
+    stats: ModelStats | MultiProfileModelStats;
     keywords: string[];
     rules?: string[];
     equipment?: MetadataModelEquipment;
@@ -138,7 +151,7 @@ export interface RenderModel extends UnifiedModel {
     type: string;
     price: number;
     amount?: number;
-    stats: ModelStats | ModelStats[];
+    stats: ModelStats | MultiProfileModelStats;
     rules: Rule[];
     keywords: string[];
     equipment?: RenderEquipment;
@@ -165,7 +178,9 @@ export interface BasicWeapon extends SuperBasicWeapon {
     amount: number;
     isLegendary?: boolean;
 }
-
+export interface LegendaryWeapon extends SuperBasicWeapon {
+    isLegendary: boolean;
+}
 export interface SuperBasicWeapon {
     name: string;
     type: string;
@@ -194,4 +209,26 @@ export interface ArmySpecificStuff {
         price: number;
     }>;
     UnitList: MetadataModel[];
+}
+
+export type ActionTypes =
+    | "select-option"
+    | "deselect-option"
+    | "remove-value"
+    | "pop-value"
+    | "set-value"
+    | "clear"
+    | "create-option";
+
+export interface ActionMeta {
+    action: ActionTypes;
+}
+
+export type RecursivePartial<T> = {
+    [P in keyof T]?: RecursivePartial<T[P]>;
+};
+
+export interface ReplacableString {
+    name: string;
+    replacing: string;
 }

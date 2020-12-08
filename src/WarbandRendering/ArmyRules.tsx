@@ -9,7 +9,7 @@ export const ArmyRulesHeaderRenderer = ({ armyRules }: { armyRules: Rule[] }) =>
                 <div className="split-div-text">{rule?.effect}</div>
             </div>
         );
-    return armyRules && armyRules.length > 0 ? <div className="quick-ref-enemies-container">
+    return armyRules && armyRules.length > 0 ? <div className="model-container">
         <div className="container-header">Army wide rules:</div>
         {renderGlobalRules()}
     </div> : null;
