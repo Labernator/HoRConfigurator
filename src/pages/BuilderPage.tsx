@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { CodeEditorContainer } from "../CodeMirror";
-import { FactionEnum, PageMap, RenderModel, Warband } from "../types";
+import "../css/BuilderPage.css";
+import { PageMap, RenderModel, Warband } from "../types";
 import { getDetailedRoster, getRosterPrice, getStratagems } from "../utility";
+import { AddModelComponent } from "../utility/AddModelComponent";
 import { ErrorMessageRenderer } from "../utility/ErrorMessages";
 import { Toolbar } from "../utility/Toolbar";
 import { WarbandRenderer } from "../WarbandRendering/WarbandRenderer";
 
-export const WarbandPage = (path: any) => {
+const Builder = (props: Warband) => {
     const [modelMap, setModelMap] = useState<PageMap[]>([]);
-    const [state, setState] = useState<Warband>(path.location.state as Warband);
     const [editorVisible, setEditorVisibility] = useState<boolean>(false);
     useEffect(() => {
         setModelMap((map) => [
@@ -22,9 +24,10 @@ export const WarbandPage = (path: any) => {
                 el.getBoundingClientRect().height + el.getBoundingClientRect().top >= 2144).map((element) => ({ "id": element.id, "page": 3 })),
         ]);
     }, []);
+    const warbandState = { Title: props.Title, Faction: props.Faction, Alignment: props.Alignment, Philosophy: props.Philosophy, ScenariosPlayed: props.ScenariosPlayed, Roster: props.Roster };
+    const roster = getDetailedRoster(warbandState.Roster, warbandState.Faction, warbandState.Alignment).filter((member) => member !== undefined) as RenderModel[];
 
-    const faction = state.Faction as FactionEnum;
-    const roster = getDetailedRoster(state.Roster, faction, state.Alignment).filter((member) => member !== undefined) as RenderModel[];
+    const renderState = { ...warbandState, RosterPrice: getRosterPrice(roster), Roster: roster, Stratagems: getStratagems(warbandState.Faction, roster, warbandState.Alignment, warbandState.ScenariosPlayed) };
     const filterRosterToPage = (page: number): RenderModel[] => roster.filter((member) => modelMap.find((entry) => entry.id === `modelsheet-${member.name}-${member.price}` && entry.page === page));
     const getPageCountFromMap = () => modelMap.map((model) => model.page).filter((page, idx, arr) => arr.indexOf(page) === idx).length;
     const renderPages = () => {
@@ -34,20 +37,24 @@ export const WarbandPage = (path: any) => {
                 ...pages,
                 <WarbandRenderer
                     key={`warband-pdf-rendering-page${i}`}
-                    state={{ ...state, Roster: filterRosterToPage(i) }}
+                    state={{ ...renderState, Roster: filterRosterToPage(i) }}
                     page={{ nr: i, total: getPageCountFromMap() }}
-                    rosterPrice={getRosterPrice(roster)}
-                    stratagems={getStratagems({ ...state, Roster: roster })}
+                    isPdfSection={true}
                 />,
             ];
         }
         return pages;
     };
     return <div>
-        <Toolbar state={state} setState={setState} setEditorVisibility={setEditorVisibility} />
+        <Toolbar setEditorVisibility={setEditorVisibility} />
+        <AddModelComponent roster={roster} faction={warbandState.Faction} />
         <ErrorMessageRenderer />
         {modelMap.length ? <div>{renderPages()}</div > : undefined}
-        <WarbandRenderer state={{ ...state, Roster: roster }} page={{ nr: 1, total: 1 }} rosterPrice={getRosterPrice(roster)} stratagems={getStratagems({ ...state, Roster: roster })} fullRender={true} hide={editorVisible} />
-        <CodeEditorContainer code={state} visible={editorVisible} onSave={setState} />
+        <WarbandRenderer state={renderState} page={{ nr: 1, total: 1 }} hide={editorVisible} />
+        <CodeEditorContainer code={warbandState} visible={editorVisible} />
     </div >;
 };
+
+const mapStateToProps = (state: Warband) => state;
+
+export const BuilderPage = connect(mapStateToProps)(Builder);

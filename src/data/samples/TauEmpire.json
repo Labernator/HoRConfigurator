@@ -7,6 +7,11 @@
     "Roster": [
         {
             "name": "Crisis Shas'vre",
+            "stats": {
+                "firstProfile": {
+                    "Movement": 12
+                }
+            },
             "equipment": {
                 "weapons": [
                     {
@@ -24,7 +29,13 @@
         },
         {
             "name": "Fire Warrior",
-            "amount": 7
+            "amount": 7,
+            "keywords": [
+                {
+                    "name": "Breacher Team",
+                    "replacing": "Strike Team"
+                }
+            ]
         },
         {
             "name": "Crisis Shas'ui",

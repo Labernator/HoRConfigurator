@@ -1,7 +1,8 @@
 import React from "react";
-import { ModelStats } from "../types";
+import { ModelStats, MultiProfileModelStats } from "../types";
+import { isMultiProfileStatLine } from "../utility";
 
-export const ModelStatsRenderer = ({ name, stats }: { name: string; stats: ModelStats | ModelStats[] }) => {
+export const ModelStatsRenderer = ({ name, stats }: { name: string; stats: ModelStats | MultiProfileModelStats }) => {
     const renderAtomicStats = (characteristics: ModelStats, idx?: number) => <tr key={`modelstats-${name}-${idx}`}>
         {idx === 0 ? <td rowSpan={2} style={{ paddingTop: "12px" }}>{name}</td> : idx !== undefined ? undefined : <td>{name}</td>}
         <td>{characteristics.Movement}</td>
@@ -15,8 +16,9 @@ export const ModelStatsRenderer = ({ name, stats }: { name: string; stats: Model
         <td>{characteristics.Save}</td>
         <td>{characteristics.InvulnerableSave}</td>
     </tr>;
-    const renderStats = () => Array.isArray(stats) ? stats.map(renderAtomicStats) : renderAtomicStats(stats);
-    return <table className="enemies-table">
+    const renderMultiProfileStats = (statLine: MultiProfileModelStats) => [renderAtomicStats(statLine.firstProfile, 0), renderAtomicStats(statLine.secondProfile, 1)];
+    const renderStats = () => isMultiProfileStatLine(stats) ? renderMultiProfileStats(stats) : renderAtomicStats(stats);
+    return <table className="model-table">
         <colgroup>
             <col style={{ width: "100px" }} />
             <col style={{ width: "25px" }} />

@@ -18,8 +18,8 @@ export class ErrorMessages {
 
 export const ErrorMessageRenderer = () => {
     const errors = ErrorMessages.getInstance().getErrors();
-    const cssClass = errors.length > 0 ? "error-container" : "error-container-placeholder";
-    return <div className={cssClass}>
+    const cssClass = errors.length > 0 ? "error-container" : "";
+    return <div id="errors-container" className={cssClass}>
         {errors.map((error) => <div>{error}</div>)}
     </div>;
 };

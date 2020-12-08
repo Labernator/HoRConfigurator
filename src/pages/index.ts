@@ -1,2 +1,4 @@
+export * from "./BuilderPage";
 export * from "./LandingPage";
-export * from "./WarbandPage";
+export * from "./NewWarbandPage";
+export * from "./SamplesPage";

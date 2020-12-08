@@ -1,0 +1,36 @@
+/* Landing Page */
+
+.landing-page {
+    width: 50rem;
+    display: grid;
+}
+
+.landing-page-columns {
+    padding: 1rem;
+    place-self: center;
+    border: 0.1rem solid black;
+    border-radius: 0.35rem;
+    margin: 1rem;
+    width: 85%;
+    display: grid;
+    cursor: pointer;
+    grid-template-rows: 7.5rem 15rem;
+}
+
+.landing-page-columns:hover {
+    border: 0.1rem solid darkgrey !important;
+    background: #e18a07;
+    filter: invert(0);
+}
+
+.landing-page-column-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.landing-page-column-icon {
+    width: 50%;
+    align-self: start;
+    justify-self: center;
+}

@@ -1,0 +1,115 @@
+.input-field {
+    font-size: 1.445em;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.filter-component {
+    clear: both;
+    float: left;
+    width: 400px;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+.focusable {
+    border: 1.5px solid #cccccc;
+    float: left;
+    width: 371px;
+    clear: both;
+    padding: 2px 8px;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+.focusable:focus-within {
+    border: 2px solid #2684FF !important;
+}
+
+.continue-button {
+    clear: both;
+    float: left;
+    padding: 2px 8px;
+    font-size: 1.445em;
+    border-radius: 4px;
+    border: 1.5px solid #cccccc;
+    margin: 5px;
+    color: hsl(0, 0%, 50%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+    height: 40px;
+    width: 390px;
+}
+
+/*selections*/
+
+.selection-container {
+    padding: 0.35rem;
+    width: 35rem;
+    clear: both;
+    display: list-item;
+}
+
+.selection-icon {
+    width: 4rem;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    place-self: center;
+}
+
+.icon-container {
+    border: 0.1rem solid black;
+    border-radius: 0.35rem;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    display: inline-grid;
+    cursor: pointer;
+    text-align: center;
+    background: #f4f4f4;
+    float: left;
+}
+
+.icon-container:hover {
+    font-weight: bold;
+    border-color: #e18a07;
+}
+
+.icon-container-disabled {
+    opacity: 0.3;
+}
+
+.icon-container-disabled:hover {
+    filter: invert(1);
+    font-weight: bold;
+    border-color: #1e75f8;
+}
+
+.icon-container-selected {
+    border: 0.1rem solid darkgrey !important;
+    background: #e18a07;
+}
+
+.icon-container-selected:hover {
+    border: 0.1rem solid darkgrey !important;
+    background: #e18a07;
+    filter: invert(0);
+}
+
+.faction-container {
+    width: 9rem;
+    height: 10rem;
+}
+
+.philosophy-container {
+    width: 9rem;
+    height: 3rem;
+}
+
+.selection-header {
+    font-size: 0.7rem;
+    margin-left: 0.35rem;
+    font-weight: bold;
+}
