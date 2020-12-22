@@ -72,9 +72,18 @@ export function stateReducer(state: Warband = { Title: "", Faction: "", Roster: 
             const modelWithKeywords = state.Roster[modelSlot];
 
             if (typeof (modelWithKeywords) === "string") {
-                return { ...state, Roster: [...state.Roster.slice(0, modelSlot), { name: modelWithKeywords, keywords: action.payload.keyword }, ...state.Roster.slice(modelSlot + 1)] };
+                return { ...state, Roster: [...state.Roster.slice(0, modelSlot), { name: modelWithKeywords, keywords: action.payload.keywords }, ...state.Roster.slice(modelSlot + 1)] };
             } else {
-                return { ...state, Roster: [...state.Roster.slice(0, modelSlot), { ...modelWithKeywords, keywords: action.payload.keyword }, ...state.Roster.slice(modelSlot + 1)] };
+                return { ...state, Roster: [...state.Roster.slice(0, modelSlot), { ...modelWithKeywords, keywords: action.payload.keywords }, ...state.Roster.slice(modelSlot + 1)] };
+            }
+        case ReduxActions.UPDATE_MODEL_RULES:
+            const modelSlot2 = state.Roster.findIndex((unit) => isSearchedModel(unit, action.payload.model, state.Faction, state.Alignment));
+            const modelWithRules = state.Roster[modelSlot2];
+
+            if (typeof (modelWithRules) === "string") {
+                return { ...state, Roster: [...state.Roster.slice(0, modelSlot2), { name: modelWithRules, rules: action.payload.rules }, ...state.Roster.slice(modelSlot2 + 1)] };
+            } else {
+                return { ...state, Roster: [...state.Roster.slice(0, modelSlot2), { ...modelWithRules, rules: action.payload.rules }, ...state.Roster.slice(modelSlot2 + 1)] };
             }
         case ReduxActions.MOVE_UP:
             const modelNr = state.Roster.findIndex((unit) => isSearchedModel(unit, action.payload, state.Faction, state.Alignment));

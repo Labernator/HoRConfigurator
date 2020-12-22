@@ -127,12 +127,24 @@
                 "price": 10
             },
             {
+                "name": "Chainsword",
+                "price": 0
+            },
+            {
+                "name": "Combat Knife",
+                "price": 0
+            },
+            {
                 "name": "Bike with Twin Boltgun",
                 "price": 2
             },
             {
                 "name": "Auto Boltstorm Gauntlets",
                 "price": 14
+            },
+            {
+                "name": "Flamestorm Gauntlets",
+                "price": 18
             },
             {
                 "name": "Fragstorm Grenade Launcher",
@@ -145,6 +157,42 @@
             {
                 "name": "Bolt Sniper Rifle",
                 "price": 3
+            },
+            {
+                "name": "Auto Bolt Rifle",
+                "price": 1
+            },
+            {
+                "name": "Stalker Bolt Rifle",
+                "price": 2
+            },
+            {
+                "name": "Bolt Rifle",
+                "price": 0
+            },
+            {
+                "name": "Boltgun",
+                "price": 0
+            },
+            {
+                "name": "Bolt Pistol",
+                "price": 0
+            },
+            {
+                "name": "Plasma Pistol",
+                "price": 7
+            },
+            {
+                "name": "Assault plasma incinerator",
+                "price": 16
+            },
+            {
+                "name": "Heavy plasma incinerator",
+                "price": 17
+            },
+            {
+                "name": "Bolt Carbine",
+                "price": 0
             },
             {
                 "name": "Accelerator Autocannon",

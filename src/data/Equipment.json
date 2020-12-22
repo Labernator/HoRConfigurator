@@ -456,6 +456,27 @@
             ]
         },
         {
+            "name": "Flamestorm Gauntlets",
+            "multiProfiles": [
+                {
+                    "name": "Shooting",
+                    "type": "Assault 2D6",
+                    "strength": 4,
+                    "damage": 1,
+                    "ap": 0,
+                    "range": 8
+                },
+                {
+                    "name": "Melee",
+                    "type": "Melee",
+                    "strength": "x2",
+                    "damage": "D3",
+                    "ap": 3,
+                    "rule": "Subtract 1 from the to hit roll when attacking with this."
+                }
+            ]
+        },
+        {
             "name": "Auto Boltstorm Gauntlets",
             "multiProfiles": [
                 {
@@ -508,6 +529,52 @@
             ]
         },
         {
+            "name": "Assault Plasma Incinerator",
+            "rule": "When firing this weapon, choose one of the profiles below.",
+            "multiProfiles": [
+                {
+                    "name": "Standard",
+                    "type": "Assault 2",
+                    "strength": 6,
+                    "damage": 1,
+                    "ap": 4,
+                    "range": 24
+                },
+                {
+                    "name": "Supercharge",
+                    "type": "Assault 2",
+                    "strength": 7,
+                    "damage": 2,
+                    "ap": 4,
+                    "range": 24,
+                    "rule": "On a hit roll of 1, the bearer is slain (after attack is resolved)"
+                }
+            ]
+        },
+        {
+            "name": "Heavy Plasma Incinerator",
+            "rule": "When firing this weapon, choose one of the profiles below.",
+            "multiProfiles": [
+                {
+                    "name": "Standard",
+                    "type": "Heavy 1",
+                    "strength": 8,
+                    "damage": 1,
+                    "ap": 4,
+                    "range": 36
+                },
+                {
+                    "name": "Supercharge",
+                    "type": "Heavy 1",
+                    "strength": 9,
+                    "damage": 2,
+                    "ap": 4,
+                    "range": 36,
+                    "rule": "On a hit roll of 1, the bearer is slain (after attack is resolved)"
+                }
+            ]
+        },
+        {
             "name": "Bike with Twin Boltgun",
             "type": "Rapid Fire 2",
             "strength": 4,
@@ -522,6 +589,14 @@
             "damage": 1,
             "ap": 0,
             "range": 24
+        },
+        {
+            "name": "Stalker Bolt Rifle",
+            "type": "Heavy 1",
+            "strength": 4,
+            "damage": 1,
+            "ap": 2,
+            "range": 36
         },
         {
             "name": "Bolt Rifle",

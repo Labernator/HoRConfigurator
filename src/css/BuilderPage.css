@@ -50,6 +50,12 @@
     overflow: hidden;
 }
 
+.add-model-container {
+    height: 64px;
+    padding-top: 15px;
+    padding-left: 75px;
+}
+
 .model-table {
     width: 780px;
     text-align: left;
@@ -183,4 +189,62 @@
 
 .dialog-button-disabled:hover {
     background: transparent;
+}
+
+.keyword-dialog-summary {
+    outline: none;
+    padding: 5px 0px;
+}
+
+.keyword-dialog-text {
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+.keyword-dialog-input-field {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.keyword-input-div {
+    width: 400px;
+}
+
+.checkbox {
+    width: 15px;
+    border: 1px solid;
+    height: 15px;
+    float: left;
+    margin: 0px 15px;
+}
+
+.selected-checkbox {
+    background: black;
+}
+
+.checkbox-container {
+    padding: 5px 0px;
+    cursor: pointer;
+}
+
+.rules-modification-table {
+    margin: 5px;
+    width: 100%;
+    float: right;
+    border: none;
+    text-align: left;
+}
+
+.remove-rule-icon {
+    cursor: pointer;
+    width: 15px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 1px;
+}
+
+.remove-rule-icon:hover {
+    background: #e18a07;
+    border-radius: 5px;
 }

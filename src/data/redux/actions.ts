@@ -8,6 +8,7 @@ export const REMOVE_UNIT_FROM_ROSTER = "REMOVE_UNIT_FROM_ROSTER";
 export const ADD_MODEL_TO_ROSTER = "ADD_MODEL_TO_ROSTER";
 export const UPDATE_MODEL_STATS = "UPDATE_MODEL_STATS";
 export const UPDATE_MODEL_KEYWORDS = "UPDATE_MODEL_KEYWORDS";
+export const UPDATE_MODEL_RULES = "UPDATE_MODEL_RULES";
 export const MOVE_UP = "MOVE_UP";
 export const MOVE_DOWN = "MOVE_DOWN";
 
@@ -62,8 +63,16 @@ interface UpdateModelKeywords {
     type: typeof UPDATE_MODEL_KEYWORDS;
     payload: {
         model: RenderModel;
-        keyword: Array<string | ReplacableString>;
+        keywords: Array<string | ReplacableString>;
     };
 }
 
-export type Actions = AddModelToRoster | SetFaction | SetWarband | DecreaseModelAmount | IncreaseModelAmount | RemoveUnitFromRoster | UpdateUnitStats | UpdateModelKeywords | MoveUp | MoveDown;
+interface UpdateModelRules {
+    type: typeof UPDATE_MODEL_RULES;
+    payload: {
+        model: RenderModel;
+        rules: Array<string>;
+    };
+}
+
+export type Actions = AddModelToRoster | SetFaction | SetWarband | DecreaseModelAmount | IncreaseModelAmount | RemoveUnitFromRoster | UpdateUnitStats | UpdateModelKeywords | UpdateModelRules | MoveUp | MoveDown;

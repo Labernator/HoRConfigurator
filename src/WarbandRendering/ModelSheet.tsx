@@ -5,7 +5,9 @@ import { DECREASE_MODEL_AMOUNT, INCREASE_MODEL_AMOUNT, MOVE_DOWN, MOVE_UP, REMOV
 import { DecreaseIcon, DeleteIcon, DownIcon, GearIcon, IncreaseIcon, KeywordsIcon, RulesIcon, StatsIcon, UpIcon } from "../images";
 import { RenderModel } from "../types";
 import { isSearchedModel } from "../utility";
+import { ModifyEquipmentDialog } from "./dialogs/ModifyEquipmentDialog";
 import { ModifyKeywordsDialog } from "./dialogs/ModifyKeywordsDialog";
+import { ModifyRulesDialog } from "./dialogs/ModifyRulesDialog";
 import { ModifyStatsDialog } from "./dialogs/ModifyStatsDialog";
 import { ModelEquipmentRenderer } from "./ModelEquipment";
 import { ModelHeaderRenderer } from "./ModelHeaderRenderer";
@@ -21,11 +23,14 @@ interface WarbandContext {
 
 export const ModelSheetRenderer = ({ model, context }: { model: RenderModel; context: WarbandContext }) => {
     const [showStatsDialog, setShowStatsDialog] = useState<boolean>(false);
-    const [showKeywordssDialog, setShowKeywordsDialog] = useState<boolean>(false);
+    const [showKeywordsDialog, setShowKeywordsDialog] = useState<boolean>(false);
+    const [showRulesDialog, setShowRulesDialog] = useState<boolean>(false);
+    const [showGearDialog, setShowGearDialog] = useState<boolean>(false);
     const dispatch = useDispatch();
     const modelId = `modelsheet-${model.name}-${model.price}${context.renderSidebar ? "-withSidebar" : ""}`;
     const state = store.getState();
-    const idx = state.Roster.findIndex((rosterModel) => isSearchedModel(rosterModel, model, state.Faction, state.Alignment));
+    const idx = state.Roster.findIndex((item) => isSearchedModel(item, model, state.Faction, state.Alignment));
+    const rosterModel = state.Roster[idx];
     const renderModelContainer = () =>
         <div id={modelId} className={`model-container ${context.renderSidebar ? "width-for-sidebar" : ""}`}>
             <ModelHeaderRenderer model={model} />
@@ -39,7 +44,9 @@ export const ModelSheetRenderer = ({ model, context }: { model: RenderModel; con
 
             <div className="model-sidebar">
                 {showStatsDialog ? <ModifyStatsDialog model={model} modelId={modelId} hideFn={setShowStatsDialog} /> : null}
-                {showKeywordssDialog ? <ModifyKeywordsDialog model={model} modelId={modelId} hideFn={setShowKeywordsDialog} /> : null}
+                {showKeywordsDialog ? <ModifyKeywordsDialog model={model} modelId={modelId} hideFn={setShowKeywordsDialog} /> : null}
+                {showRulesDialog ? <ModifyRulesDialog model={model} modelId={modelId} modifiedRules={typeof (rosterModel) !== "string" ? rosterModel.rules : undefined} hideFn={setShowRulesDialog} /> : null}
+                {showGearDialog ? <ModifyEquipmentDialog model={model} modelId={modelId} modifiedGear={typeof (rosterModel) !== "string" ? rosterModel.rules : undefined} hideFn={setShowGearDialog} /> : null}
                 <div
                     key={`${model.name}deleteicon`}
                     className="model-sidebar-icon"
@@ -107,22 +114,21 @@ export const ModelSheetRenderer = ({ model, context }: { model: RenderModel; con
                 <div
                     key={`${model.name}gearicon`}
                     className="model-sidebar-icon"
-                    onClick={() => alert("TODO: Equipment modification dialog")}
+                    onClick={() => setShowGearDialog(true)}
                 >
                     <img alt="delete" src={GearIcon} style={{ width: "100%" }} />
                 </div>
                 <div
                     key={`${model.name}rulesicon`}
                     className="model-sidebar-icon"
-                    onClick={() => alert("TODO: Rules modification dialog")}
+                    onClick={() => setShowRulesDialog(true)}
                 >
                     <img alt="delete" src={RulesIcon} style={{ width: "100%" }} />
                 </div>
                 <div
                     key={`${model.name}keywordsicon`}
                     className="model-sidebar-icon"
-                    onClick={() => alert("TODO: Keywords modification dialog")}
-                // onClick={() => setShowKeywordsDialog(true)}
+                    onClick={() => setShowKeywordsDialog(true)}
                 >
                     <img alt="delete" src={KeywordsIcon} style={{ width: "100%" }} />
                 </div>

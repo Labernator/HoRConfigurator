@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { getFactionSpecifics } from ".";
+import { ADD_MODEL_TO_ROSTER } from "../data/redux/actions";
 import { ModelType, RenderModel } from "../types";
 import { DropdownMenuComponent } from "./DropdownMenu";
 import { countType } from "./Utils";
@@ -9,23 +11,36 @@ export const AddModelComponent = ({ roster, faction }: { roster: RenderModel[]; 
     const disableSpecial = countType(roster, ModelType.Special) >= getFactionSpecifics(faction).ModelAllowance.Special;
     const disableCore = countType(roster, ModelType.Core) >= getFactionSpecifics(faction).ModelAllowance.Core;
 
-    return <div style={{ height: "64px", paddingTop: "15px" }}>
-        <div style={{ paddingLeft: "75px", fontSize: "0.8rem", color: "#343434" }}>Add new models by choosing from the dropdowns below</div>
+    const dispatch = useDispatch();
+
+    return <div className="add-model-container">
+        <div style={{ fontSize: "0.8rem", color: "#343434" }}>Add new models by choosing from the dropdowns below</div>
         <DropdownMenuComponent
-            id="leader"
-            placeholder={disableLeaders ? "Leaders maxed already" : "Add a new leader model"}
+            dropdownOptions={{
+                id: "leader",
+                placeholder: disableLeaders ? "Leaders maxed already" : "Add a new leader model",
+                disabled: disableLeaders,
+            }}
             originalList={getFactionSpecifics(faction).UnitList.filter((model) => model.type === ModelType.Leader).map((model) => model.name)}
-            disable={disableLeaders}
+            callbackFn={(listItem) => dispatch({ type: ADD_MODEL_TO_ROSTER, payload: listItem })}
         />
         <DropdownMenuComponent
-            id="code"
-            placeholder={disableCore ? "Core maxed already" : "Add a new core model"}
+            dropdownOptions={{
+                id: "core",
+                placeholder: disableCore ? "Core maxed already" : "Add a new core model",
+                disabled: disableCore,
+            }}
             originalList={getFactionSpecifics(faction).UnitList.filter((model) => model.type === ModelType.Core).map((model) => model.name)}
-            disable={disableCore} />
+            callbackFn={(listItem) => dispatch({ type: ADD_MODEL_TO_ROSTER, payload: listItem })}
+        />
         <DropdownMenuComponent
-            id="special"
-            placeholder={disableSpecial ? "Special maxed already" : "Add a new special model"}
+            dropdownOptions={{
+                id: "special",
+                placeholder: disableSpecial ? "Special maxed already" : "Add a new special model",
+                disabled: disableSpecial,
+            }}
             originalList={getFactionSpecifics(faction).UnitList.filter((model) => model.type === ModelType.Special).map((model) => model.name)}
-            disable={disableSpecial} />
+            callbackFn={(listItem) => dispatch({ type: ADD_MODEL_TO_ROSTER, payload: listItem })}
+        />
     </div >;
 };

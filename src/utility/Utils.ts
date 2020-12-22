@@ -13,12 +13,6 @@ const otherEquipment = EquipmentJson.otherEquipment as OtherEquipment[];
 const rules = RulesJson.rules as Rule[];
 const philosophies = RulesJson.Philosophies as Philosophy[];
 
-export const ensureWeaponExists = (input: MetadataWeapon | MultiProfileWeapon | undefined, name: string) => {
-    if (input === undefined) {
-        throw new TypeError(`${name} needs to be added to metadata`);
-    }
-    return input;
-};
 export const isMultiProfileStatLine = (statLine: any): statLine is MultiProfileModelStats => statLine.firstProfile !== undefined && statLine.secondProfile !== undefined;
 export const isPartialMultiProfileStatLine = (statLine: any): statLine is RecursivePartial<MultiProfileModelStats> => statLine.firstProfile !== undefined || statLine.secondProfile !== undefined;
 export const getDetailedRoster = (roster: Array<RosterModel | string>, faction: string, alignment?: string): Array<RenderModel | undefined> => roster.map((rosterModel) => getDetailedModel(rosterModel, faction, alignment));
@@ -131,11 +125,11 @@ export const isSuperBasicWeapon = (weapon: any): weapon is SuperBasicWeapon =>
     weapon.strength && (typeof (weapon.strength) === "string" || typeof (weapon.strength) === "number") &&
     weapon.damage && (typeof (weapon.damage) === "string" || typeof (weapon.damage) === "number") &&
     (typeof (weapon.ap) === "string" || typeof (weapon.ap) === "number");
-export const isBasicWeapon = (weapon: any): weapon is BasicWeapon => typeof (weapon.price) === "number" && typeof (weapon.amount) === "number" && isSuperBasicWeapon(weapon);
-export const isLegendaryWeapon = (weapon: any): weapon is LegendaryWeapon => typeof (weapon.isLegendary) === "boolean" && isSuperBasicWeapon(weapon);
-export const isMultiProfileRenderWeapon = (weapon: any): weapon is MultiProfileRenderWeapon => typeof (weapon.price) === "number" && typeof (weapon.amount) === "number" && isMultiProfileWeapon(weapon);
+export const isBasicWeapon = (weapon: any): weapon is BasicWeapon => weapon && typeof (weapon.price) === "number" && typeof (weapon.amount) === "number" && isSuperBasicWeapon(weapon);
+export const isLegendaryWeapon = (weapon: any): weapon is LegendaryWeapon => weapon && typeof (weapon.isLegendary) === "boolean" && isSuperBasicWeapon(weapon);
+export const isMultiProfileRenderWeapon = (weapon: any): weapon is MultiProfileRenderWeapon => weapon && typeof (weapon.price) === "number" && typeof (weapon.amount) === "number" && isMultiProfileWeapon(weapon);
 
-const getWeaponProfile = (weaponRef: string | WeaponReference, faction: FactionEnum): RenderWeapon | undefined => {
+export const getWeaponProfile = (weaponRef: string | WeaponReference, faction: FactionEnum): RenderWeapon | undefined => {
     if (typeof weaponRef === "string") {
         const weaponDetails = getWeaponDetails(weaponRef);
         if (!weaponDetails) {
@@ -195,6 +189,15 @@ export const getRule = (ruleName: string, faction: FactionEnum, alignment?: stri
         return undefined;
     }
     return actualRule.alignmentParameter && alignment ? actualRule = { ...actualRule, effect: actualRule.effect.replace(getFactionSpecifics(faction).AlignmentPlaceholder || "", alignment) } : actualRule;
+};
+
+export const getPureRule = (ruleName: string): Rule | undefined => {
+    const actualRule = rules.find((rule) => rule.name.toLocaleUpperCase() === ruleName.toLocaleUpperCase());
+    if (!actualRule) {
+        ErrorMessages.getInstance().addErrorMessage(`Rule with name '${ruleName}' does not exist in Metadata`);
+        return undefined;
+    }
+    return actualRule;
 };
 
 export const getAllKeywords = (models: RenderModel[]) => models.reduce((keywords: string[], model) => [...keywords, ...model.keywords], []).filter((item, idx, array) => array.indexOf(item) === idx).sort();
